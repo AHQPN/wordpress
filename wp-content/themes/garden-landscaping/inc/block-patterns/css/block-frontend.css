@@ -1,0 +1,113 @@
+/*banner section css*/
+.banner-section{
+  width: auto;
+  height: auto;
+}
+.banner-section .banner-content{
+  margin-left: 9%;
+}
+.banner-section h1, .project-section h2{
+  font-weight: normal !important;
+}
+.banner-section .wp-block-button{
+  border: 2px dashed #ffffff !important;
+}
+.banner-section .wp-block-button .wp-block-button__link{
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.banner-section .wp-block-button:hover a.wp-block-button__link{
+  background-color: #fff !important;
+  color: #00917c !important;
+}
+.banner-section .banner-content h1:hover{
+  color: #00917c !important;
+}
+/*Project Section*/
+.project-section h2{
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+.project-section p.small-title {
+  color: #222;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.project-section p.small-title:after, .project-section p.small-title:before {
+  content: "";
+  width: 50px;
+  height: 2px;
+  display: inline-block;
+  margin: 0 15px;
+  background: #00917c;
+}
+.project-box{
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+.project-box img {
+  width: 100%;
+  height: auto;
+  transform: scale(1.5);
+  transform-origin: right center;
+  transition: all 0.7s ease 0s;
+}
+.project-box:hover img {
+  opacity: 0.7;
+  transform: translateX(50px) scale(1.2);
+}
+.project-box .project-content {
+  background: hsl(171deg 100% 28% / 80%);
+  text-align: center;
+  width: 75%;
+  padding: 20px;
+  opacity: 0;
+  transform-origin: left center;
+  transform: translateX(-100%) translateY(-50%) scale(0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: all 0.7s ease 0s;
+  outline: dashed 2px #fff;
+  outline-offset: 10px;
+}
+.project-box:hover .project-content {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+@media screen and (max-width: 575px){ 
+  .banner-section .banner-content{
+    margin-left: 0;
+  }
+  .banner-section p{
+    display: none;
+  }
+  .banner-section h1{
+    font-size: 35px !important;
+    text-align: center;
+  }
+  .banner-section .wp-block-buttons.is-layout-flex{
+    justify-content: center !important;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 720px){
+  .banner-section .banner-content{
+    margin-left: 0;
+  }
+  .project-section .wp-block-columns{
+    flex-wrap: nowrap;
+  }
+  .project-section .wp-block-column:nth-child(2){
+    margin: 0 15px;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 1000px) {
+  .banner-section .banner-content{
+    margin-left: 0;
+  }
+  .banner-section .wp-block-columns{
+    padding-left: 0 !important;
+  }
+}

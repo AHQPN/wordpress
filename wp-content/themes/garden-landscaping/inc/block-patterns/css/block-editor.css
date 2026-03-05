@@ -1,0 +1,112 @@
+.banner-section p, .project-section p, .banner-section .wp-block-button{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.banner-section h1, .project-section h2, .project-section h3 {
+  font-family: 'Marcellus', serif;
+  margin:  0 0 10px !important;
+}
+.banner-section p, .project-section p, .banner-section .block-editor-block-list__block, .project-section .block-editor-block-list__block{
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+
+/*banner-section css*/
+.banner-section .banner-content{
+  margin-left: 12%;
+}
+.banner-section .banner-content h1{
+  line-height: 1;
+}
+.banner-section .wp-block-button{
+  border: 2px dashed #ffffff;
+  padding: 4px;
+  border-radius: 30px;
+}
+.banner-section .wp-block-button .wp-block-button__link{
+  color: #fff !important;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.banner-section .wp-block-button:hover .wp-block-button__link{
+  background-color: #fff !important;
+  color: #00917c !important;
+}
+.banner-section .block-editor-block-list__layout.wp-container-1{
+  padding-left: 0px !important;
+}
+.banner-section .banner-content h1:hover{
+  color: #00917c !important;
+}
+/*Project Section*/
+.project-section{
+  text-align: center;
+}
+.project-section h2{
+  margin-bottom: 30px !important;
+  letter-spacing: 2px;
+}
+.project-section p.small-title {
+  color: #222;
+  letter-spacing: 2px;
+  font-weight: 600;
+  display: inline-block;
+  line-height: 1;
+}
+.project-section p.small-title:after, .project-section p.small-title:before {
+  content: "";
+  width: 50px;
+  height: 2px;
+  display: inline-block;
+  margin: 0 15px;
+  background: #00917c;
+  position: absolute;
+  left: -70px;
+  bottom: 0;
+  top: auto;
+}
+.project-section p.small-title:after{
+  right: -70px;
+  left: auto;
+}
+.project-box .project-content{
+  background: #00917c;
+  padding: 20px;
+  outline: 2px dashed #fff;
+  outline-offset: -10px;
+}
+.project-box{
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+.project-box img {
+  width: 100%;
+  height: auto;
+  transform: scale(1.5);
+  transform-origin: right center;
+  transition: all 0.7s ease 0s;
+}
+.project-box:hover img {
+  opacity: 0.7;
+  transform: translateX(50px) scale(1.2);
+}
+.project-box .project-content {
+  background: hsl(171deg 100% 28% / 80%);
+  text-align: center;
+  width: 75%;
+  padding: 20px;
+  opacity: 0;
+  transform-origin: left center;
+  transform: translateX(-100%) translateY(-50%) scale(0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: all 0.7s ease 0s;
+  outline: dashed 2px #fff;
+  outline-offset: 5px;
+}
+.project-box:hover .project-content {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+}

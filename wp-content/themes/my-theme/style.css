@@ -1,0 +1,48 @@
+/*
+Theme Name: Bagberry Clone (My Theme)
+Theme URI: https://example.com/bagberry-clone
+Author: Local Dev
+Description: A minimalist WooCommerce theme cloned from Bagberry.
+Version: 1.0.0
+Text Domain: my-theme
+*/
+
+/* Variables */
+:root {
+    --primary-color: #000000;
+    --text-color: #333333;
+    --bg-color: #ffffff;
+    --border-color: #e5e5e5;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Swiper Slider Overrides */
+.myHeroSwiper .swiper-pagination-bullet {
+    background: #fff;
+    opacity: 0.5;
+}
+.myHeroSwiper .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+.slider-btn:hover {
+    background: #000 !important;
+    color: #fff !important;
+}
