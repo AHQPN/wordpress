@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/blog-slider",
+  "version": "0.1.0",
+  "title": "SM Blog Slider",
+  "category": "design",
+  "icon": "slides",
+  "description": "Block blog slider Lacoste style with manual and auto-import support.",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "sectionTitle": {
+      "type": "string",
+      "default": "We are Lacoste"
+    },
+    "sectionIconLogo": {
+      "type": "string",
+      "default": ""
+    },
+    "slides": {
+      "type": "array",
+      "default": [
+        {
+          "id": 1,
+          "imageUrl": "https://www.lacoste.com/on/demandware.static/-/Library-Sites-LacosteContent/default/dw2f7f9e8f/img/home/2024/03/WE-ARE-LACOSTE-DESKTOP.jpg",
+          "title": "Steal the look!",
+          "description": "Step onto the court with confidence. Discover padel-inspired styles that blend performance with modern elegance.",
+          "btnText": "See the look",
+          "btnUrl": "#"
+        }
+      ]
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#596c3d"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
+  "style": "file:./style-index.css",
+  "editorStyle": "file:./index.css",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "textdomain": "my-blocks"
+}

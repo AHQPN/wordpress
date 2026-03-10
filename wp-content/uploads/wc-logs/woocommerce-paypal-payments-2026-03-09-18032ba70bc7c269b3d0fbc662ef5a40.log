@@ -1,0 +1,41 @@
+2026-03-09T02:51:57+00:00 DEBUG #6107 - [New Request] GET /wordpress/wp-admin/admin.php
+2026-03-09T02:51:57+00:00 DEBUG #6107 - GET https://api.woocommerce.com/integrations/ppc/v1/customer/partners/K8SKZ36LQBWXJ/merchant-integrations/
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+
+2026-03-09T02:51:57+00:00 WARNING #6107 - [Error] Not Found CONTEXT: {"args":{"method":"GET","headers":{"Authorization":"Bearer token","Content-Type":"application/json"}},"response":{"headers":{},"body":"{"statusCode":404,"error":"Not Found","message":"Not Found"}","response":{"code":404,"message":"Not Found"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}}
+2026-03-09T02:52:01+00:00 DEBUG #2461 - [New Request] GET /wordpress/wp-json/wc/v3/wc_paypal/webhooks
+2026-03-09T02:52:01+00:00 DEBUG #2461 - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+
+2026-03-09T02:52:03+00:00 DEBUG #7504 - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link
+2026-03-09T02:52:03+00:00 DEBUG #7504 - Loaded onboarding URL from cache: production-express_checkout-
+2026-03-09T02:52:03+00:00 INFO #7504 - Using cached onboarding URL for: production-express_checkout-
+2026-03-09T02:52:41+00:00 DEBUG #8726 - [New Request] GET /wordpress/wp-admin/plugins.php
+2026-03-09T02:52:41+00:00 DEBUG #8726 - Webhook lock acquired for 'unregister'.
+2026-03-09T02:52:41+00:00 DEBUG #8726 - Webhook operation 'unregister' started.
+2026-03-09T02:52:41+00:00 DEBUG #8726 - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+
+2026-03-09T02:52:41+00:00 ERROR #8726 - Failed to delete webhooks: [Error] Not Found
+2026-03-09T02:52:41+00:00 INFO #8726 - Webhooks deleted.
+2026-03-09T02:52:42+00:00 DEBUG #8726 - Webhook lock released for 'unregister'.
+2026-03-09T06:28:43+00:00 DEBUG #1535 - [New Request] POST /wordpress/wp-admin/admin.php
+2026-03-09T06:28:43+00:00 DEBUG #1535 - Skipping reCAPTCHA meta addition: No customer identifier available CONTEXT: {"order_id":949,"backtrace":[{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce-paypal-payments\modules\woocommerce-logging\src\Logger\WooCommerceLogger.php","line":82,"function":"log","class":"WC_Logger","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce-paypal-payments\vendor\psr\log\Psr\Log\LoggerTrait.php","line":120,"function":"log","class":"WooCommerce\WooCommerce\Logging\Logger\WooCommerceLogger","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce-paypal-payments\modules\ppcp-fraud-protection\src\Recaptcha\Recaptcha.php","line":198,"function":"debug","class":"WooCommerce\WooCommerce\Logging\Logger\WooCommerceLogger","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce-paypal-payments\modules\ppcp-fraud-protection\src\FraudProtectionModule.php","line":120,"function":"add_result_meta","class":"WooCommerce\PayPalCommerce\FraudProtection\Recaptcha\Recaptcha","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php","line":341,"function":"WooCommerce\PayPalCommerce\FraudProtection\{closure}","class":"WooCommerce\PayPalCommerce\FraudProtection\FraudProtectionModule","type":"::"},{"file":"C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php","line":365,"function":"apply_filters","class":"WP_Hook","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-includes\plugin.php","line":522,"function":"do_action","class":"WP_Hook","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\src\Internal\DataStores\Orders\OrdersTableDataStore.php","line":2926,"function":"do_action"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-data-store.php","line":196,"function":"update","class":"Automattic\WooCommerce\Internal\DataStores\Orders\OrdersTableDataStore","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-order.php","line":223,"function":"update","class":"WC_Data_Store","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-order.php","line":284,"function":"save","class":"WC_Abstract_Order","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\admin\meta-boxes\class-wc-meta-box-order-data.php","line":828,"function":"save","class":"WC_Order","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php","line":343,"function":"save","class":"WC_Meta_Box_Order_Data","type":"::"},{"file":"C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php","line":365,"function":"apply_filters","class":"WP_Hook","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-includes\plugin.php","line":522,"function":"do_action","class":"WP_Hook","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\src\Internal\Admin\Orders\Edit.php","line":318,"function":"do_action"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\src\Internal\Admin\Orders\Edit.php","line":153,"function":"handle_order_update","class":"Automattic\WooCommerce\Internal\Admin\Orders\Edit","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\src\Internal\Admin\Orders\PageController.php","line":352,"function":"setup","class":"Automattic\WooCommerce\Internal\Admin\Orders\Edit","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\src\Internal\Admin\Orders\PageController.php","line":368,"function":"prepare_order_edit_form","class":"Automattic\WooCommerce\Internal\Admin\Orders\PageController","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\src\Internal\Admin\Orders\PageController.php","line":167,"function":"setup_action_edit_order","class":"Automattic\WooCommerce\Internal\Admin\Orders\PageController","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php","line":341,"function":"handle_load_page_action","class":"Automattic\WooCommerce\Internal\Admin\Orders\PageController","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php","line":365,"function":"apply_filters","class":"WP_Hook","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-includes\plugin.php","line":522,"function":"do_action","class":"WP_Hook","type":"->"},{"file":"C:\xampp\htdocs\wordpress\wp-admin\admin.php","line":242,"function":"do_action"}]}

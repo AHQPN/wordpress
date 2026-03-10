@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/hero",
+  "version": "0.1.0",
+  "title": "SM Hero Section",
+  "category": "design",
+  "icon": "cover-image",
+  "description": "Block hero banner toàn màn hình với tiêu đề, mô tả và nút CTA.",
+  "keywords": [
+    "hero",
+    "banner",
+    "slider",
+    "sm"
+  ],
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Welcome to Our Store"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "Discover amazing products and services"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Shop Now"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundVideo": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundType": {
+      "type": "string",
+      "default": "image"
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "rgba(0,0,0,0.5)"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "my-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

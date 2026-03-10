@@ -1,0 +1,172 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/sm-featured-product/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.sm-featured-product {
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.sm-fp-inner {
+  max-width: 1750px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.sm-fp-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sm-fp-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.sm-fp-nav .sm-fp-counter {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+.sm-fp-nav .sm-fp-nav-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.sm-fp-nav .sm-fp-nav-btns button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #1a1a1a;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  padding: 4px 8px;
+}
+
+.sm-fp-nav .sm-fp-nav-btns button:hover {
+  opacity: 1;
+}
+
+.sm-fp-track-wrap {
+  overflow: hidden;
+}
+
+.sm-fp-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.sm-fp-card {
+  flex: 0 0 auto;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.sm-fp-card:hover .sm-fp-card-img img {
+  transform: scale(1.03);
+}
+
+.sm-fp-card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: #f5f5f5;
+  margin-bottom: 12px;
+}
+
+.sm-fp-card-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sm-fp-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #2d5f2d;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  z-index: 2;
+}
+
+.sm-fp-card-name {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 0 6px;
+  line-height: 1.4;
+  color: #1a1a1a;
+}
+
+.sm-fp-card-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.sm-fp-card-price del {
+  color: #999;
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+.sm-fp-card-price ins {
+  text-decoration: none;
+}
+
+/* Editor specific */
+
+.sm-featured-product-editor {
+  padding: 20px;
+}
+
+.sm-featured-product-editor .sm-fp-card-img {
+  aspect-ratio: 3/4;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.sm-featured-product-editor .sm-fp-card-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.sm-featured-product-editor .sm-fp-card-placeholder {
+  aspect-ratio: 3/4;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .sm-fp-inner {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sm-featured-product {
+    padding: 20px 0;
+  }
+  .sm-fp-inner {
+    padding: 0 15px;
+  }
+}

@@ -1,0 +1,11 @@
+.sm-hero-section {
+	min-height: 400px;
+}
+
+.sm-hero-title,
+.sm-hero-subtitle {
+	&:focus {
+		outline: 2px dashed rgba(255, 255, 255, 0.5);
+		outline-offset: 4px;
+	}
+}

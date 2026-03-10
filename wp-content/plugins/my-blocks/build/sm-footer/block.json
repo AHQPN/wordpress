@@ -1,0 +1,119 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/footer",
+  "version": "0.1.0",
+  "title": "SM Footer",
+  "category": "design",
+  "icon": "shield-alt",
+  "description": "Block footer Lacoste style với 4 cột và thanh toán.",
+  "keywords": [
+    "footer",
+    "lacoste",
+    "sm"
+  ],
+  "attributes": {
+    "newsletterTitle": {
+      "type": "string",
+      "default": "Sign up for new stories,"
+    },
+    "newsletterSubtitle": {
+      "type": "string",
+      "default": "news and personal offers"
+    },
+    "aboutTitle": {
+      "type": "string",
+      "default": "ABOUT LACOSTE"
+    },
+    "aboutContent": {
+      "type": "array",
+      "default": [
+        {
+          "label": "The Lacoste Group",
+          "url": "#"
+        },
+        {
+          "label": "Careers",
+          "url": "#"
+        },
+        {
+          "label": "Brand protection",
+          "url": "#"
+        }
+      ]
+    },
+    "categoriesTitle": {
+      "type": "string",
+      "default": "CATEGORIES"
+    },
+    "categoriesContent": {
+      "type": "array",
+      "default": [
+        {
+          "label": "Men's collection",
+          "url": "#"
+        },
+        {
+          "label": "Women's collection",
+          "url": "#"
+        },
+        {
+          "label": "Kids collection",
+          "url": "#"
+        }
+      ]
+    },
+    "helpTitle": {
+      "type": "string",
+      "default": "HELP & CONTACTS"
+    },
+    "helpContent": {
+      "type": "array",
+      "default": [
+        {
+          "label": "Lacoste size chart",
+          "url": "#"
+        },
+        {
+          "label": "FAQ",
+          "url": "#"
+        },
+        {
+          "label": "By email",
+          "url": "#"
+        }
+      ]
+    },
+    "storeCount": {
+      "type": "string",
+      "default": "50 STORES IN INDONESIA"
+    },
+    "storeBtnText": {
+      "type": "string",
+      "default": "Find a boutique"
+    },
+    "storeBtnUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#f4f4f4"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#222222"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "my-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

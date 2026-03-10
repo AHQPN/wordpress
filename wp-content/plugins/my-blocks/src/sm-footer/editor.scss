@@ -1,0 +1,13 @@
+.sm-footer {
+	.sm-footer-column {
+		outline: 1px dashed transparent;
+		transition: outline 0.2s;
+		&:hover {
+			outline-color: #ddd;
+		}
+	}
+
+	.sm-footer-newsletter-form {
+		opacity: 0.7;
+	}
+}

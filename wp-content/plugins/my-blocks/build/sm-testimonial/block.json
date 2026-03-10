@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/testimonial",
+  "version": "0.1.0",
+  "title": "SM Testimonial",
+  "category": "design",
+  "icon": "format-quote",
+  "description": "Block đánh giá khách hàng.",
+  "keywords": [
+    "testimonial",
+    "review",
+    "quote",
+    "sm"
+  ],
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "What Our Customers Say"
+    },
+    "quote": {
+      "type": "string",
+      "default": "This is the best store I have ever shopped at!"
+    },
+    "authorName": {
+      "type": "string",
+      "default": "Jane Doe"
+    },
+    "authorRole": {
+      "type": "string",
+      "default": "Happy Customer"
+    },
+    "avatarUrl": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "my-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

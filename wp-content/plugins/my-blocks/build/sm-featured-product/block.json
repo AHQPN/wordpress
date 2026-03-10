@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/featured-product",
+  "version": "0.1.0",
+  "title": "SM Featured Product",
+  "category": "design",
+  "icon": "star-filled",
+  "description": "Block hiển thị sản phẩm dạng slider, dynamic load từ product category.",
+  "keywords": [
+    "product",
+    "featured",
+    "sm",
+    "woocommerce"
+  ],
+  "attributes": {
+    "categoryId": {
+      "type": "number",
+      "default": 0
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "numberOfProducts": {
+      "type": "number",
+      "default": 12
+    },
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "my-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

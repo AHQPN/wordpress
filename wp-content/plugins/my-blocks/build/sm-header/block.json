@@ -1,0 +1,162 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/header",
+  "version": "0.1.0",
+  "title": "SM Header",
+  "category": "design",
+  "icon": "menu",
+  "description": "Header Lacoste-style: Logo trái, Navigation giữa, Utilities phải.",
+  "keywords": [
+    "header",
+    "menu",
+    "navigation",
+    "sm"
+  ],
+  "attributes": {
+    "logoUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "logoWidth": {
+      "type": "number",
+      "default": 160
+    },
+    "siteName": {
+      "type": "string",
+      "default": "LACOSTE"
+    },
+    "menuItems": {
+      "type": "array",
+      "default": [
+        {
+          "label": "Men",
+          "url": "#",
+          "children": [
+            {
+              "label": "Clothing",
+              "url": "#",
+              "children": [
+                {
+                  "label": "Polo Shirts",
+                  "url": "#",
+                  "children": []
+                },
+                {
+                  "label": "T-Shirts",
+                  "url": "#",
+                  "children": []
+                },
+                {
+                  "label": "Jackets",
+                  "url": "#",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "label": "Shoes",
+              "url": "#",
+              "children": [
+                {
+                  "label": "Sneakers",
+                  "url": "#",
+                  "children": []
+                },
+                {
+                  "label": "Loafers",
+                  "url": "#",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "label": "Accessories",
+              "url": "#",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Women",
+          "url": "#",
+          "children": [
+            {
+              "label": "Clothing",
+              "url": "#",
+              "children": []
+            },
+            {
+              "label": "Shoes",
+              "url": "#",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Kids",
+          "url": "#",
+          "children": []
+        },
+        {
+          "label": "Polo",
+          "url": "#",
+          "children": []
+        },
+        {
+          "label": "Collections",
+          "url": "#",
+          "children": []
+        }
+      ]
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "showSearch": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLocale": {
+      "type": "boolean",
+      "default": true
+    },
+    "showStoreLocator": {
+      "type": "boolean",
+      "default": true
+    },
+    "storeLocatorUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "showAccount": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCart": {
+      "type": "boolean",
+      "default": true
+    },
+    "stickyHeader": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "my-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

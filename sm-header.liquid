@@ -1,0 +1,501 @@
+{{ 'sm-header.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .sm-header {
+    --sm-header-bg: {{ section.settings.bg_color }};
+    --sm-header-text: {{ section.settings.text_color }};
+  }
+  .sm-header__logo-img {
+    width: {{ section.settings.logo_width }}px !important;
+  }
+{%- endstyle -%}
+
+<div class="sm-header-wrapper" data-sticky="{{ section.settings.sticky_header }}">
+  <!-- ============ HEADER ============ -->
+    <header class="sm-header" id="sm-header">
+    <div class="sm-header__inner">
+
+      <!-- === MOBILE LEFT: Search === -->
+      <div class="sm-header__mobile-left sm-header__mobile-only">
+        <button type="button" class="sm-header__search-trigger" aria-label="Search">
+          {% render 'sm-icon-search' %}
+        </button>
+      </div>
+
+      <!-- === DESKTOP LEFT / MOBILE CENTER: Logo === -->
+      <div class="sm-header__logo">
+        <a href="{{ routes.root_url }}" class="sm-header__logo-link">
+          {%- if section.settings.logo != blank -%}
+            {%- assign logo_width_2x = section.settings.logo_width | times: 2 -%}
+            <img 
+              src="{{ section.settings.logo | image_url: width: logo_width_2x }}" 
+              alt="{{ shop.name }}" 
+              width="{{ section.settings.logo_width }}" 
+              height="auto"
+              class="sm-header__logo-img sm-header__logo-img--desktop"
+            >
+            <img 
+              src="{{ section.settings.logo | image_url: width: 200 }}" 
+              alt="{{ shop.name }}" 
+              width="100" 
+              height="auto"
+              class="sm-header__logo-img sm-header__logo-img--mobile sm-header__mobile-only"
+            >
+          {%- else -%}
+            <span class="sm-header__logo-text sm-header__logo-text--desktop">{{ shop.name }}</span>
+            <span class="sm-header__logo-text sm-header__logo-text--mobile sm-header__mobile-only">{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+      </div>
+
+      <!-- === CENTER: Navigation + Search icon (Desktop) === -->
+      <nav class="sm-header__nav" id="sm-nav" aria-label="Main navigation">
+        <ul class="sm-header__nav-list">
+          {%- for link in section.settings.menu.links -%}
+            <li class="sm-header__nav-item{% if link.links.size > 0 %} has-submenu{% endif %}" data-menu-index="{{ forloop.index0 }}">
+              {%- if link.links.size > 0 -%}
+                <button type="button" class="sm-header__nav-link" aria-expanded="false" aria-controls="sm-mega-{{ forloop.index0 }}">
+                  <span>{{ link.title }}</span>
+                  {% render 'sm-icon-chevron-down' %}
+                </button>
+              {%- else -%}
+                <a href="{{ link.url }}" class="sm-header__nav-link">
+                  <span>{{ link.title }}</span>
+                </a>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+
+          <!-- Search icon (Desktop only in this position) -->
+          <li class="sm-header__nav-item sm-header__nav-item--search sm-header__desktop-only">
+            <button type="button" class="sm-header__nav-link sm-header__search-trigger" aria-label="Search">
+              {% render 'sm-icon-search' %}
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- === RIGHT: Utilities (flat flex row) === -->
+      <div class="sm-header__utilities">
+        {%- if section.settings.show_locale -%}
+          <div class="sm-header__lang-switcher sm-header__desktop-only">
+            <button type="button" class="sm-header__utility-text sm-header__lang-toggle" aria-expanded="false" aria-label="Change language">
+              {{ localization.language.iso_code | upcase | default: 'EN' }}
+            </button>
+            <div class="sm-header__lang-dropdown" aria-hidden="true">
+              {%- form 'localization', id: 'header-lang-form' -%}
+                {%- for language in localization.available_languages -%}
+                  <button type="submit" name="locale_code" value="{{ language.iso_code }}"
+                    class="sm-header__lang-option{% if language.iso_code == localization.language.iso_code %} is-active{% endif %}">
+                    {{ language.iso_code | upcase }} — {{ language.endonym_name }}
+                  </button>
+                {%- endfor -%}
+              {%- endform -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_store_locator -%}
+          <a href="{{ section.settings.store_locator_url | default: '#' }}" class="sm-header__icon-btn sm-header__desktop-only" aria-label="Store locator">
+            {% render 'sm-icon-pin' %}
+          </a>
+        {%- endif -%}
+
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="sm-header__icon-btn sm-header__desktop-only" aria-label="Account">
+          {% render 'sm-icon-user' %}
+        </a>
+
+        <a href="{{ routes.cart_url }}" class="sm-header__icon-btn sm-header__cart-btn" aria-label="Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="sm-header__cart-count" data-cart-count>{{ cart.item_count }}</span>
+        </a>
+
+        <!-- Mobile hamburger -->
+        <button type="button" class="sm-header__hamburger sm-header__mobile-only" aria-label="Menu" id="sm-hamburger">
+          {% render 'sm-icon-menu' %}
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============ MEGA MENU PANELS ============ -->
+  {%- for link in section.settings.menu.links -%}
+    {%- if link.links.size > 0 -%}
+      <div class="sm-mega" id="sm-mega-{{ forloop.index0 }}" aria-hidden="true" data-mega-index="{{ forloop.index0 }}">
+        <div class="sm-mega__overlay" data-mega-close></div>
+        <div class="sm-mega__panel">
+          <!-- Close button -->
+          <button type="button" class="sm-mega__close" data-mega-close aria-label="Close menu">
+            {% render 'sm-icon-close' %}
+          </button>
+
+          <div class="sm-mega__body">
+            <!-- === Columns: first level children appear as column headers === -->
+            <div class="sm-mega__columns">
+              {%- for child in link.links -%}
+                <div class="sm-mega__col">
+                  {%- if child.links.size > 0 -%}
+                    <h3 class="sm-mega__col-title">{{ child.title }}</h3>
+                    <ul class="sm-mega__list">
+                      {%- for grandchild in child.links -%}
+                        <li><a href="{{ grandchild.url }}" class="sm-mega__link">{{ grandchild.title }}</a></li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- else -%}
+                    <a href="{{ child.url }}" class="sm-mega__col-title sm-mega__col-title--link">{{ child.title }}</a>
+                  {%- endif -%}
+                </div>
+              {%- endfor -%}
+            </div>
+
+            <!-- === Featured images row (blocks) === -->
+            {%- assign has_images = false -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'mega_image' and block.settings.parent_menu == link.title -%}
+                {%- assign has_images = true -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+
+            {%- if has_images -%}
+              <div class="sm-mega__featured">
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'mega_image' and block.settings.parent_menu == link.title -%}
+                    <a href="{{ block.settings.link | default: '#' }}" class="sm-mega__featured-card" {{ block.shopify_attributes }}>
+                      {%- if block.settings.image != blank -%}
+                        <div class="sm-mega__featured-img">
+                          <img src="{{ block.settings.image | image_url: width: 600 }}" 
+                            alt="{{ block.settings.title | escape }}" 
+                            loading="lazy"
+                            width="{{ block.settings.image.width }}"
+                            height="{{ block.settings.image.height }}">
+                        </div>
+                      {%- else -%}
+                        <div class="sm-mega__featured-img sm-mega__featured-img--placeholder">
+                          {{ 'collection-1' | placeholder_svg_tag }}
+                        </div>
+                      {%- endif -%}
+                      {%- if block.settings.title != blank -%}
+                        <span class="sm-mega__featured-title">{{ block.settings.title }}</span>
+                      {%- endif -%}
+                    </a>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+<!-- ============ MOBILE DRAWER ============ -->
+<div class="sm-mobile-drawer" id="sm-mobile-drawer" aria-hidden="true">
+  <div class="sm-mobile-drawer__overlay" data-drawer-close></div>
+  
+  <div class="sm-mobile-drawer__panels">
+    <!-- === MAIN PANEL (Level 0) === -->
+    <div class="sm-mobile-drawer__panel is-active" data-panel-id="main">
+      <div class="sm-mobile-drawer__header">
+        <button type="button" class="sm-mobile-drawer__close" data-drawer-close aria-label="Close menu">
+          {% render 'sm-icon-close' %}
+        </button>
+      </div>
+      <nav class="sm-mobile-drawer__nav">
+        <ul class="sm-mobile-drawer__list">
+          {%- for link in section.settings.menu.links -%}
+            {%- assign has_sub = false -%}
+            {%- if link.links.size > 0 -%}{%- assign has_sub = true -%}{%- endif -%}
+            
+            {%- comment -%}Check if this top link has mega images associated{%- endcomment -%}
+            {%- assign has_images = false -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'mega_image' and block.settings.parent_menu == link.title -%}
+                {%- assign has_images = true -%}{%- break -%}{%- endif -%}
+            {%- endfor -%}
+
+            <li class="sm-mobile-drawer__item">
+              {%- if has_sub or has_images -%}
+                <button type="button" class="sm-mobile-drawer__link" data-drill-trigger="panel-{{ forloop.index }}">
+                  <span>{{ link.title }}</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+              {%- else -%}
+                <a href="{{ link.url }}" class="sm-mobile-drawer__link">{{ link.title }}</a>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <!-- Secondary Links -->
+        <div class="sm-mobile-drawer__secondary">
+          <ul class="sm-mobile-drawer__secondary-list">
+            <li>
+              <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="sm-mobile-drawer__secondary-link">
+                {% render 'sm-icon-user' %}
+                <span>{%- if customer -%}My Account{%- else -%}Log in / Sign up{%- endif -%}</span>
+              </a>
+            </li>
+            {%- if section.settings.show_store_locator -%}
+              <li>
+                <a href="{{ section.settings.store_locator_url | default: '#' }}" class="sm-mobile-drawer__secondary-link">
+                  {% render 'sm-icon-pin' %}
+                  <span>Find a boutique</span>
+                </a>
+              </li>
+            {%- endif -%}
+            <li class="sm-mobile-drawer__lang-item">
+              <button type="button" class="sm-mobile-drawer__secondary-link sm-mobile-drawer__lang-trigger" aria-expanded="false">
+                 <span class="sm-mobile-drawer__lang-code">{{ localization.language.iso_code | upcase | default: 'EN' }}</span>
+                 <span>Change language</span>
+                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="sm-mobile-drawer__lang-list" style="display: none;">
+                {%- form 'localization', id: 'mobile-lang-form' -%}
+                  {%- for language in localization.available_languages -%}
+                    <button type="submit" name="locale_code" value="{{ language.iso_code }}"
+                      class="sm-mobile-drawer__lang-option{% if language.iso_code == localization.language.iso_code %} is-active{% endif %}">
+                      {{ language.iso_code | upcase }} — {{ language.endonym_name }}
+                    </button>
+                  {%- endfor -%}
+                {%- endform -%}
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- === SUB PANELS (Level 1) === -->
+    {%- for link in section.settings.menu.links -%}
+      {%- assign link_index = forloop.index -%}
+      {%- assign has_sub = false -%}
+      {%- if link.links.size > 0 -%}{%- assign has_sub = true -%}{%- endif -%}
+      
+      {%- assign has_images = false -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'mega_image' and block.settings.parent_menu == link.title -%}
+          {%- assign has_images = true -%}{%- break -%}{%- endif -%}
+      {%- endfor -%}
+
+      {%- if has_sub or has_images -%}
+        {%- assign is_dark = false -%}
+        {%- if link.title contains 'We are Lacoste' -%}{%- assign is_dark = true -%}{%- endif -%}
+
+        <div class="sm-mobile-drawer__panel{% if is_dark %} is-dark{% endif %}" data-panel-id="panel-{{ link_index }}" data-parent-panel="main">
+          <div class="sm-mobile-drawer__header">
+            <button type="button" class="sm-mobile-drawer__back" data-drill-back aria-label="Back">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            </button>
+            <div class="sm-mobile-drawer__breadcrumbs">
+              <span class="breadcrumb-home">Home</span> / <span>{{ link.title }}</span>
+            </div>
+            <button type="button" class="sm-mobile-drawer__close" data-drawer-close aria-label="Close menu">
+              {% render 'sm-icon-close' %}
+            </button>
+          </div>
+
+          <div class="sm-mobile-drawer__content">
+            {%- if link.title != blank -%}
+              <h2 class="sm-mobile-drawer__panel-title">{{ link.title }}</h2>
+            {%- endif -%}
+
+            {%- if has_sub -%}
+              <ul class="sm-mobile-drawer__sub-list">
+                {%- for child in link.links -%}
+                  {%- assign child_index = forloop.index -%}
+                  <li>
+                    {%- if child.links.size > 0 -%}
+                      <button type="button" class="sm-mobile-drawer__sub-link" data-drill-trigger="subpanel-{{ link_index }}-{{ child_index }}">
+                        <span>{{ child.title }}</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                      </button>
+                    {%- else -%}
+                      <a href="{{ child.url }}" class="sm-mobile-drawer__sub-link">
+                        <span>{{ child.title }}</span>
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+
+            {%- if has_images -%}
+              <div class="sm-mobile-drawer__mega-grid">
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'mega_image' and block.settings.parent_menu == link.title -%}
+                    <a href="{{ block.settings.link | default: '#' }}" class="sm-mobile-drawer__mega-card">
+                      <div class="sm-mobile-drawer__mega-img">
+                        <img src="{{ block.settings.image | image_url: width: 600 }}" 
+                          alt="{{ block.settings.title }}" 
+                          loading="lazy"
+                          width="{{ block.settings.image.width }}"
+                          height="{{ block.settings.image.height }}">
+                      </div>
+                      <span class="sm-mobile-drawer__mega-title">{{ block.settings.title }}</span>
+                    </a>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <!-- === SUB PANELS (Level 2) === -->
+        {%- for child in link.links -%}
+          {%- if child.links.size > 0 -%}
+            <div class="sm-mobile-drawer__panel{% if is_dark %} is-dark{% endif %}" data-panel-id="subpanel-{{ link_index }}-{{ forloop.index }}" data-parent-panel="panel-{{ link_index }}">
+              <div class="sm-mobile-drawer__header">
+                <button type="button" class="sm-mobile-drawer__back" data-drill-back aria-label="Back">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                </button>
+                <div class="sm-mobile-drawer__breadcrumbs">
+                  <span class="breadcrumb-home">Home</span> / <span>{{ link.title }}</span> / <span>{{ child.title }}</span>
+                </div>
+                <button type="button" class="sm-mobile-drawer__close" data-drawer-close aria-label="Close menu">
+                  {% render 'sm-icon-close' %}
+                </button>
+              </div>
+
+              <div class="sm-mobile-drawer__content">
+                <h2 class="sm-mobile-drawer__panel-title">{{ child.title }}</h2>
+                <ul class="sm-mobile-drawer__sub-list">
+                  {%- for grandchild in child.links -%}
+                    <li>
+                      <a href="{{ grandchild.url }}" class="sm-mobile-drawer__sub-link">
+                        <span>{{ grandchild.title }}</span>
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+<script src="{{ 'sm-header.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "SM Header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 60,
+      "max": 280,
+      "step": 5,
+      "unit": "px",
+      "label": "Logo width",
+      "default": 160
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "header",
+      "content": "Utilities"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_locale",
+      "label": "Show language code",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_store_locator",
+      "label": "Show store locator icon",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "store_locator_url",
+      "label": "Store locator page"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_header",
+      "label": "Sticky header on scroll",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text / Icon color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mega_image",
+      "name": "Mega Menu Image",
+      "settings": [
+        {
+          "type": "text",
+          "id": "parent_menu",
+          "label": "Parent menu title",
+          "info": "Must exactly match a top-level menu item title (e.g. 'Men')"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Featured"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "SM Header"
+    }
+  ]
+}
+{% endschema %}

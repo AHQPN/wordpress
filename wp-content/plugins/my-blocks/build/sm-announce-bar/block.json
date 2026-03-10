@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/announce-bar",
+  "version": "0.1.0",
+  "title": "SM Announce Bar",
+  "category": "design",
+  "icon": "megaphone",
+  "description": "Thanh thông báo (Announce bar) nằm ngay dưới Header.",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": ".sm-announce-bar__content",
+      "default": "Free Shipping | Get Rp 50,000 off for your first purchase. Use code: FIRST50 | Extra 10% off for Mandiri Card. Use code: LACMAN"
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#0b172a"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "linkColor": {
+      "type": "string",
+      "default": "#e2e8f0"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "my-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
