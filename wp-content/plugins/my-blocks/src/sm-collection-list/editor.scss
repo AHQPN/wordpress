@@ -1,1 +1,22 @@
 /* Editor-only styles for SM Collection List */
+.wp-block-sm-collection-list,
+.sm-collection-list {
+	.sm-slider-track {
+		display: flex;
+		gap: 20px;
+		flex-wrap: nowrap;
+	}
+
+	.sm-item-img {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #999;
+		font-size: 14px;
+		cursor: pointer;
+
+		&:hover {
+			background: #e5e2dc;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/product-breadcrumb",
+  "version": "0.1.0",
+  "title": "SM Product Breadcrumb",
+  "category": "sm-blocks",
+  "icon": "arrow-right-alt2",
+  "description": "Displays the product breadcrumb.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "my-blocks",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

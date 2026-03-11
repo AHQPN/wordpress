@@ -2,6 +2,7 @@ import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
 	InspectorControls,
+	RichText,
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -26,7 +27,7 @@ interface WCProduct {
 }
 
 export default function Edit( { attributes, setAttributes }: any ) {
-	const { categoryId, columns, numberOfProducts } = attributes;
+	const { categoryId, columns, numberOfProducts, sectionTitle } = attributes;
 	const blockProps = useBlockProps( { className: 'sm-featured-product-editor' } );
 
 	const [ categories, setCategories ] = useState<any[]>( [] );
@@ -123,44 +124,55 @@ export default function Edit( { attributes, setAttributes }: any ) {
 
 				{ categoryId > 0 && ! isLoading && products.length > 0 && (
 					<>
-						<div className="sm-fp-header">
-							<div className="sm-fp-nav">
-								<span className="sm-fp-counter">
+						<div className="sm-fp-header sm-slider-nav sm-cl-header">
+							<RichText
+								tagName="h2"
+								className="sm-fp-section-title sm-cl-title"
+								value={ sectionTitle }
+								onChange={ ( v ) => setAttributes( { sectionTitle: v } ) }
+								placeholder="Section Title"
+							/>
+							<div className="sm-slider-nav-btns-wrap" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+								<span className="sm-slider-counter">
 									1 / { Math.max( 1, products.length - columns + 1 ) }
 								</span>
-								<div className="sm-fp-nav-btns">
+								<div className="sm-slider-nav-btns">
 									<button disabled>❮</button>
 									<button disabled>❯</button>
 								</div>
 							</div>
 						</div>
-						<div
-							className="sm-fp-grid"
-							style={ {
-								display: 'grid',
-								gridTemplateColumns: `repeat(${ columns }, 1fr)`,
-								gap: '20px',
-							} }
-						>
-							{ products.slice( 0, columns ).map( ( p ) => (
-								<div className="sm-fp-card" key={ p.id }>
-									<div className="sm-fp-card-img">
-										{ p.images?.[0]?.src ? (
-											<img src={ p.images[0].src } alt={ p.name } />
-										) : (
-											<div className="sm-fp-card-placeholder">No Image</div>
-										) }
+						<div className="sm-slider-container">
+							<div
+								className="sm-fp-grid sm-slider-track"
+								style={ {
+									display: 'grid',
+									gridTemplateColumns: `repeat(${ columns }, 1fr)`,
+									gap: '20px',
+								} }
+							>
+								{ products.slice( 0, columns ).map( ( p ) => (
+									<div className="sm-fp-item sm-item-card" key={ p.id }>
+										<div className="sm-item-img">
+											{ p.images?.[0]?.src ? (
+												<img src={ p.images[0].src } alt={ p.name } />
+											) : (
+												<div className="sm-item-card-placeholder">No Image</div>
+											) }
+										</div>
+										<div className="sm-item-content">
+											<h3
+												className="sm-item-label"
+												dangerouslySetInnerHTML={ { __html: p.name } }
+											/>
+											<div
+												className="sm-item-price"
+												dangerouslySetInnerHTML={ { __html: p.price_html } }
+											/>
+										</div>
 									</div>
-									<h3
-										className="sm-fp-card-name"
-										dangerouslySetInnerHTML={ { __html: p.name } }
-									/>
-									<div
-										className="sm-fp-card-price"
-										dangerouslySetInnerHTML={ { __html: p.price_html } }
-									/>
-								</div>
-							) ) }
+								) ) }
+							</div>
 						</div>
 					</>
 				) }

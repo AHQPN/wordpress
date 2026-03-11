@@ -1,1 +1,0 @@
-{"version":3,"file":"sm-announce-bar/index.css","mappings":";;;AAAA;EACC;EACA;AACD,C","sources":["webpack://my-blocks/./src/sm-announce-bar/editor.scss"],"sourcesContent":[".sm-announce-bar-wrapper {\n\t/* Placeholder for editor styles */\n\tmargin: 0;\n}\n"],"names":[],"sourceRoot":""}

@@ -1,0 +1,24 @@
+// Editor-only styles for SM Collection Split
+.sm-collection-split-editor {
+	.sm-cs-img-placeholder {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #eee;
+		color: #666;
+		cursor: pointer;
+		background-size: cover;
+		background-position: center;
+		min-height: 200px;
+	}
+
+	.sm-cs-editor-item {
+		background: #f9f9f9;
+		padding: 15px;
+		margin-bottom: 15px;
+		border: 1px solid #eee;
+		border-radius: 4px;
+	}
+}

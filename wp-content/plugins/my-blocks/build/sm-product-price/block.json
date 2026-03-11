@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/product-price",
+  "version": "0.1.0",
+  "title": "SM Product Price",
+  "category": "sm-blocks",
+  "icon": "money-alt",
+  "description": "Displays the product price.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "my-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php"
+}

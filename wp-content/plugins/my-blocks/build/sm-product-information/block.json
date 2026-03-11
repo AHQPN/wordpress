@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/product-information",
+  "version": "0.1.0",
+  "title": "SM Product Information (PDP Layout)",
+  "category": "sm-blocks",
+  "icon": "feedback",
+  "description": "A wrapper block defining the CSS Grid layout for a Single Product Page, containing dynamic sub-blocks.",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "layout": {
+      "allowEditing": false
+    }
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
+  "textdomain": "my-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

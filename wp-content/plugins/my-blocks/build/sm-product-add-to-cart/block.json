@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/product-add-to-cart",
+  "version": "0.1.0",
+  "title": "SM Product Add to Cart",
+  "category": "sm-blocks",
+  "icon": "cart",
+  "description": "Displays the add to cart button and quantity input.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "my-blocks",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

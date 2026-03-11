@@ -29,6 +29,10 @@
     "align": {
       "type": "string",
       "default": "full"
+    },
+    "sectionTitle": {
+      "type": "string",
+      "default": ""
     }
   },
   "supports": {

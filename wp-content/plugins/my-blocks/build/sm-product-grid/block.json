@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/product-grid",
+  "version": "0.1.0",
+  "title": "SM Product Grid",
+  "category": "sm-theme",
+  "description": "Premium product grid for archive and category pages.",
+  "attributes": {
+    "columns": {
+      "type": "number",
+      "default": 4
+    },
+    "number": {
+      "type": "number",
+      "default": 12
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

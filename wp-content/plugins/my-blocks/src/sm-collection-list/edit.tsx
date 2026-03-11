@@ -233,7 +233,7 @@ export default function Edit( { attributes, setAttributes }: any ) {
 			</InspectorControls>
 
 			<section { ...blockProps }>
-				<div className="sm-cl-header">
+				<div className="sm-cl-header sm-slider-nav">
 					<RichText
 						tagName="h2"
 						className="sm-cl-title"
@@ -243,63 +243,74 @@ export default function Edit( { attributes, setAttributes }: any ) {
 						}
 						placeholder="Section Title"
 					/>
-					<div className="sm-cl-nav">
-						<span className="sm-cl-counter">
+					<div className="sm-slider-nav-btns-wrap" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+						<span className="sm-slider-counter">
 							1 / { Math.ceil( items.length / columns ) || 1 }
 						</span>
-						<div className="sm-cl-nav-btns">
+						<div className="sm-slider-nav-btns">
 							<button disabled>❮</button>
 							<button disabled>❯</button>
 						</div>
 					</div>
 				</div>
-				<div
-					className="sm-cl-track"
-					style={ {
-						gridTemplateColumns: `repeat(${ items.length || columns }, calc(${ 100 / columns }% - 20px))`,
-					} }
-				>
-					{ items.length === 0 && (
-						<p style={ { gridColumn: '1/-1', textAlign: 'center', color: '#999' } }>
-							Chưa có item. Hãy import từ Menu hoặc thêm thủ công.
-						</p>
-					) }
-					{ items.map( ( item: CollectionItem, i: number ) => (
-						<div className="sm-cl-item" key={ i }>
-							<MediaUploadCheck>
-								<MediaUpload
-									onSelect={ ( m: any ) =>
-										updateItem( i, { imageUrl: m.url } )
-									}
-									allowedTypes={ [ 'image' ] }
-									render={ ( { open }: any ) => (
-										<div
-											className="sm-cl-img"
-											onClick={ open }
-											style={ {
-												backgroundImage: item.imageUrl
-													? `url(${ item.imageUrl })`
-													: undefined,
-											} }
-										>
-											{ ! item.imageUrl && (
-												<span>+ Chọn ảnh</span>
-											) }
-										</div>
-									) }
-								/>
-							</MediaUploadCheck>
-							<RichText
-								tagName="span"
-								className="sm-cl-label"
-								value={ item.label }
-								onChange={ ( v: string ) =>
-									updateItem( i, { label: v } )
-								}
-								placeholder="Label"
-							/>
-						</div>
-					) ) }
+				<div className="sm-slider-container">
+					<div
+						className="sm-cl-track sm-slider-track"
+						style={ {
+							gridTemplateColumns: `repeat(${ items.length || columns }, calc(${ 100 / columns }% - 20px))`,
+							display: 'grid',
+							gap: '20px'
+						} }
+					>
+						{ items.length === 0 && (
+							<p style={ { gridColumn: '1/-1', textAlign: 'center', color: '#999' } }>
+								Chưa có item. Hãy import từ Menu hoặc thêm thủ công.
+							</p>
+						) }
+						{ items.map( ( item: CollectionItem, i: number ) => (
+							<div className="sm-cl-item sm-item-card" key={ i }>
+								<MediaUploadCheck>
+									<MediaUpload
+										onSelect={ ( m: any ) =>
+											updateItem( i, { imageUrl: m.url } )
+										}
+										allowedTypes={ [ 'image' ] }
+										render={ ( { open }: any ) => (
+											<div
+												className="sm-item-img"
+												onClick={ open }
+												style={ {
+													backgroundImage: item.imageUrl
+														? `url(${ item.imageUrl })`
+														: undefined,
+													backgroundSize: 'cover',
+													backgroundPosition: 'center',
+													display: 'flex',
+													alignItems: 'center',
+													justifyContent: 'center'
+												} }
+											>
+												{ ! item.imageUrl && (
+													<span>+ Chọn ảnh</span>
+												) }
+											</div>
+										) }
+									/>
+								</MediaUploadCheck>
+								<div className="sm-item-content">
+									<RichText
+										tagName="span"
+										className="sm-item-label"
+										value={ item.label }
+										onChange={ ( v: string ) =>
+											updateItem( i, { label: v } )
+										}
+										placeholder="Label"
+									/>
+								</div>
+							</div>
+						) ) }
+					</div>
 				</div>
 			</section>
 		</>

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/collection-split",
+  "version": "0.1.0",
+  "title": "SM Collection Split",
+  "category": "sm-blocks",
+  "icon": "columns",
+  "description": "50/50 split layout or 2-column grid with text overlays.",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "displayMode": {
+      "type": "string",
+      "default": "split"
+    },
+    "items": {
+      "type": "array",
+      "default": [
+        {
+          "id": 1,
+          "categoryId": 0,
+          "imageUrl": "",
+          "title": "New Collection",
+          "description": "Short description here",
+          "buttonText": "Find out more",
+          "buttonUrl": "#",
+          "layout": "image-text",
+          "overlayPosition": "bottom-left"
+        }
+      ]
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "sectionTitle": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "my-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

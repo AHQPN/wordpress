@@ -1,0 +1,59 @@
+// Shared Slider Structure
+.sm-slider-container {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+
+	.sm-slider-track-wrap {
+		overflow: visible; // Allow items to be visible during swipe
+	}
+
+	.sm-slider-track {
+		display: flex;
+		gap: 20px;
+		transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		touch-action: pan-y; // Enable vertical scroll, disable horizontal browser scroll
+		will-change: transform;
+	}
+}
+
+// Shared Navigation
+.sm-slider-nav {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+
+	.sm-slider-counter {
+		font-size: 16px;
+		font-weight: 600;
+		color: #1a1a1a;
+		white-space: nowrap;
+	}
+
+	.sm-slider-nav-btns {
+		display: flex;
+		gap: 8px;
+
+		button {
+			background: none;
+			border: none;
+			font-size: 20px;
+			cursor: pointer;
+			color: #1a1a1a;
+			opacity: 1;
+			transition: opacity 0.3s;
+			padding: 4px 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&:disabled {
+				cursor: default;
+			}
+
+			@media (max-width: 768px) {
+				display: none; // Hide buttons on mobile in favor of swipe
+			}
+		}
+	}
+}

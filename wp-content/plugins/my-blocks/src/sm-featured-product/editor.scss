@@ -1,1 +1,22 @@
 /* Editor-only styles for SM Featured Product */
+.sm-featured-product-editor {
+	padding: 20px;
+
+	.sm-fp-grid {
+		display: grid;
+		gap: 20px;
+	}
+
+	.sm-fp-item {
+		max-height: 500px;
+	}
+
+	.sm-fp-card-placeholder {
+		aspect-ratio: 3 / 4;
+		background: #e0e0e0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #999;
+	}
+}

@@ -147,6 +147,65 @@ return array(
 		'style' => 'file:./style-index.css',
 		'viewScript' => 'file:./view.js'
 	),
+	'sm-collection-split' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/collection-split',
+		'version' => '0.1.0',
+		'title' => 'SM Collection Split',
+		'category' => 'sm-blocks',
+		'icon' => 'columns',
+		'description' => '50/50 split layout or 2-column grid with text overlays.',
+		'supports' => array(
+			'html' => false,
+			'align' => array(
+				'wide',
+				'full'
+			)
+		),
+		'attributes' => array(
+			'displayMode' => array(
+				'type' => 'string',
+				'default' => 'split'
+			),
+			'items' => array(
+				'type' => 'array',
+				'default' => array(
+					array(
+						'id' => 1,
+						'categoryId' => 0,
+						'imageUrl' => '',
+						'title' => 'New Collection',
+						'description' => 'Short description here',
+						'buttonText' => 'Find out more',
+						'buttonUrl' => '#',
+						'layout' => 'image-text',
+						'overlayPosition' => 'bottom-left'
+					)
+				)
+			),
+			'bgColor' => array(
+				'type' => 'string',
+				'default' => '#ffffff'
+			),
+			'textColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			),
+			'sectionTitle' => array(
+				'type' => 'string',
+				'default' => ''
+			)
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css'
+	),
 	'sm-featured-product' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -178,6 +237,10 @@ return array(
 			'align' => array(
 				'type' => 'string',
 				'default' => 'full'
+			),
+			'sectionTitle' => array(
+				'type' => 'string',
+				'default' => ''
 			)
 		),
 		'supports' => array(
@@ -557,6 +620,266 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css'
+	),
+	'sm-product-add-to-cart' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-add-to-cart',
+		'version' => '0.1.0',
+		'title' => 'SM Product Add to Cart',
+		'category' => 'sm-blocks',
+		'icon' => 'cart',
+		'description' => 'Displays the add to cart button and quantity input.',
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'viewScript' => 'file:./view.js',
+		'render' => 'file:./render.php'
+	),
+	'sm-product-breadcrumb' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-breadcrumb',
+		'version' => '0.1.0',
+		'title' => 'SM Product Breadcrumb',
+		'category' => 'sm-blocks',
+		'icon' => 'arrow-right-alt2',
+		'description' => 'Displays the product breadcrumb.',
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php'
+	),
+	'sm-product-description' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-description',
+		'version' => '0.1.0',
+		'title' => 'SM Product Description',
+		'category' => 'sm-blocks',
+		'icon' => 'text',
+		'description' => 'Displays the product detailed description.',
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'render' => 'file:./render.php'
+	),
+	'sm-product-grid' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-grid',
+		'version' => '0.1.0',
+		'title' => 'SM Product Grid',
+		'category' => 'sm-theme',
+		'description' => 'Premium product grid for archive and category pages.',
+		'attributes' => array(
+			'columns' => array(
+				'type' => 'number',
+				'default' => 4
+			),
+			'number' => array(
+				'type' => 'number',
+				'default' => 12
+			)
+		),
+		'supports' => array(
+			'html' => false,
+			'anchor' => true
+		),
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php'
+	),
+	'sm-product-image' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-image',
+		'version' => '0.1.0',
+		'title' => 'SM Product Image',
+		'category' => 'sm-blocks',
+		'icon' => 'format-image',
+		'description' => 'Displays the product image gallery.',
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'render' => 'file:./render.php'
+	),
+	'sm-product-information' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-information',
+		'version' => '0.1.0',
+		'title' => 'SM Product Information (PDP Layout)',
+		'category' => 'sm-blocks',
+		'icon' => 'feedback',
+		'description' => 'A wrapper block defining the CSS Grid layout for a Single Product Page, containing dynamic sub-blocks.',
+		'supports' => array(
+			'html' => false,
+			'align' => array(
+				'wide',
+				'full'
+			),
+			'layout' => array(
+				'allowEditing' => false
+			)
+		),
+		'attributes' => array(
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
+			)
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css'
+	),
+	'sm-product-price' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-price',
+		'version' => '0.1.0',
+		'title' => 'SM Product Price',
+		'category' => 'sm-blocks',
+		'icon' => 'money-alt',
+		'description' => 'Displays the product price.',
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'render' => 'file:./render.php'
+	),
+	'sm-product-rating' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-rating',
+		'version' => '0.1.0',
+		'title' => 'SM Product Rating',
+		'category' => 'woocommerce',
+		'description' => 'Displays the product average rating and review count.',
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php'
+	),
+	'sm-product-related' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-related',
+		'version' => '0.1.0',
+		'title' => 'SM Related Products',
+		'category' => 'woocommerce',
+		'description' => 'Display related products with custom Lacoste styling.',
+		'supports' => array(
+			'html' => false,
+			'align' => array(
+				'wide',
+				'full'
+			)
+		),
+		'attributes' => array(
+			'limit' => array(
+				'type' => 'number',
+				'default' => 4
+			),
+			'columns' => array(
+				'type' => 'number',
+				'default' => 4
+			),
+			'sectionTitle' => array(
+				'type' => 'string',
+				'default' => 'Related Products'
+			)
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php'
+	),
+	'sm-product-reviews' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-reviews',
+		'version' => '0.1.0',
+		'title' => 'SM Product Reviews',
+		'category' => 'woocommerce',
+		'description' => 'A modern, premium product reviews block with summaries and submission form.',
+		'supports' => array(
+			'html' => false,
+			'align' => array(
+				'wide',
+				'full'
+			)
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php'
+	),
+	'sm-product-short-description' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-short-description',
+		'version' => '0.1.0',
+		'title' => 'SM Product Short Description',
+		'category' => 'woocommerce',
+		'description' => 'Displays the product short description.',
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'render' => 'file:./render.php'
+	),
+	'sm-product-title' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-title',
+		'version' => '0.1.0',
+		'title' => 'SM Product Title',
+		'category' => 'sm-blocks',
+		'icon' => 'heading',
+		'description' => 'Displays the product title.',
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'render' => 'file:./render.php'
+	),
+	'sm-product-trust-badges' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-trust-badges',
+		'version' => '0.1.0',
+		'title' => 'SM Product Trust Badges',
+		'category' => 'woocommerce',
+		'description' => 'Displays custom shop trust badges.',
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php'
 	),
 	'sm-testimonial' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',

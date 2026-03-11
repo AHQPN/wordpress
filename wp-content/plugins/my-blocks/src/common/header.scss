@@ -1,0 +1,36 @@
+// Shared Section Header Styles
+.sm-cl-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.sm-cl-title {
+	font-size: clamp(20px, 4vw, 32px);
+	font-weight: 700;
+	margin: 0;
+	color: inherit;
+	text-transform: uppercase;
+}
+
+.sm-slider-nav-btns-wrap {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.sm-slider-counter {
+	font-size: 14px;
+	font-weight: 600;
+	opacity: 0.6;
+}
+
+@media (max-width: 991px) {
+	.sm-cl-header {
+		margin-bottom: 20px;
+		gap: 10px;
+	}
+}
