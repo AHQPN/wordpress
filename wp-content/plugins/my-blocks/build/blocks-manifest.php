@@ -99,6 +99,41 @@ return array(
 		'viewScript' => 'file:./view.js',
 		'textdomain' => 'my-blocks'
 	),
+	'sm-category-banner' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/category-banner',
+		'version' => '0.1.0',
+		'title' => 'SM Category Banner',
+		'category' => 'sm-blocks',
+		'icon' => 'cover-image',
+		'description' => 'Hiển thị banner toàn chiều rộng cho danh mục sản phẩm (tự động lấy ảnh và tên danh mục).',
+		'attributes' => array(
+			'height' => array(
+				'type' => 'string',
+				'default' => '400px'
+			),
+			'overlayOpacity' => array(
+				'type' => 'number',
+				'default' => 0.3
+			),
+			'defaultImage' => array(
+				'type' => 'string',
+				'default' => ''
+			)
+		),
+		'supports' => array(
+			'html' => false,
+			'align' => array(
+				'full'
+			)
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php'
+	),
 	'sm-collection-list' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -404,111 +439,9 @@ return array(
 				'type' => 'string',
 				'default' => 'LACOSTE'
 			),
-			'menuItems' => array(
-				'type' => 'array',
-				'default' => array(
-					array(
-						'label' => 'Men',
-						'url' => '#',
-						'children' => array(
-							array(
-								'label' => 'Clothing',
-								'url' => '#',
-								'children' => array(
-									array(
-										'label' => 'Polo Shirts',
-										'url' => '#',
-										'children' => array(
-											
-										)
-									),
-									array(
-										'label' => 'T-Shirts',
-										'url' => '#',
-										'children' => array(
-											
-										)
-									),
-									array(
-										'label' => 'Jackets',
-										'url' => '#',
-										'children' => array(
-											
-										)
-									)
-								)
-							),
-							array(
-								'label' => 'Shoes',
-								'url' => '#',
-								'children' => array(
-									array(
-										'label' => 'Sneakers',
-										'url' => '#',
-										'children' => array(
-											
-										)
-									),
-									array(
-										'label' => 'Loafers',
-										'url' => '#',
-										'children' => array(
-											
-										)
-									)
-								)
-							),
-							array(
-								'label' => 'Accessories',
-								'url' => '#',
-								'children' => array(
-									
-								)
-							)
-						)
-					),
-					array(
-						'label' => 'Women',
-						'url' => '#',
-						'children' => array(
-							array(
-								'label' => 'Clothing',
-								'url' => '#',
-								'children' => array(
-									
-								)
-							),
-							array(
-								'label' => 'Shoes',
-								'url' => '#',
-								'children' => array(
-									
-								)
-							)
-						)
-					),
-					array(
-						'label' => 'Kids',
-						'url' => '#',
-						'children' => array(
-							
-						)
-					),
-					array(
-						'label' => 'Polo',
-						'url' => '#',
-						'children' => array(
-							
-						)
-					),
-					array(
-						'label' => 'Collections',
-						'url' => '#',
-						'children' => array(
-							
-						)
-					)
-				)
+			'menuId' => array(
+				'type' => 'number',
+				'default' => 0
 			),
 			'bgColor' => array(
 				'type' => 'string',
@@ -558,7 +491,8 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
+		'viewScript' => 'file:./view.js',
+		'render' => 'file:./render.php'
 	),
 	'sm-hero' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
@@ -636,6 +570,7 @@ return array(
 		'textdomain' => 'my-blocks',
 		'editorScript' => 'file:./index.js',
 		'viewScript' => 'file:./view.js',
+		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php'
 	),
 	'sm-product-breadcrumb' => array(
@@ -669,6 +604,24 @@ return array(
 		),
 		'textdomain' => 'my-blocks',
 		'editorScript' => 'file:./index.js',
+		'render' => 'file:./render.php'
+	),
+	'sm-product-filter' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-filter',
+		'version' => '0.1.0',
+		'title' => 'SM Product Filter',
+		'category' => 'sm-blocks',
+		'icon' => 'filter',
+		'description' => 'Sidebar product filter for PLP.',
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'viewScript' => 'file:./view.js',
+		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php'
 	),
 	'sm-product-grid' => array(
@@ -712,6 +665,7 @@ return array(
 		),
 		'textdomain' => 'my-blocks',
 		'editorScript' => 'file:./index.js',
+		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php'
 	),
 	'sm-product-information' => array(
@@ -743,6 +697,47 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css'
+	),
+	'sm-product-listing' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'sm/product-listing',
+		'version' => '0.1.0',
+		'title' => 'SM Product Listing Section',
+		'category' => 'sm-blocks',
+		'icon' => 'layout',
+		'description' => 'Block tổng hợp bao gồm Bộ lọc (Filter) bên trái và Lưới sản phẩm (Grid) bên phải.',
+		'attributes' => array(
+			'columns' => array(
+				'type' => 'number',
+				'default' => 3
+			),
+			'showFilter' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'filterWidth' => array(
+				'type' => 'string',
+				'default' => '25%'
+			),
+			'gridWidth' => array(
+				'type' => 'string',
+				'default' => '75%'
+			)
+		),
+		'supports' => array(
+			'html' => false,
+			'align' => array(
+				'wide',
+				'full'
+			)
+		),
+		'textdomain' => 'my-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'viewScript' => 'file:./view.js',
+		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php'
 	),
 	'sm-product-price' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',

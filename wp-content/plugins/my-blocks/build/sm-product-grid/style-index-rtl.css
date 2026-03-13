@@ -1,0 +1,136 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/sm-product-grid/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.sm-product-grid-wrapper {
+  width: 100%;
+  margin: 40px 0;
+  font-family: inherit;
+}
+.sm-product-grid-wrapper .sm-grid-inner {
+  width: 100%;
+}
+.sm-product-grid-wrapper .sm-grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 20px;
+}
+.sm-product-grid-wrapper .sm-grid-header .sm-results-count {
+  font-size: 14px;
+  color: #767676;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.sm-product-grid-wrapper .sm-grid-header .sm-ordering {
+  position: relative;
+}
+.sm-product-grid-wrapper .sm-grid-header .sm-ordering select {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  padding: 10px 15px 10px 40px;
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+  min-width: 200px;
+  transition: all 0.2s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2710%27 height=%276%27 viewBox=%270 0 10 6%27%3E%3Cpath d=%27M0 0l5 5 5-5%27 fill=%27none%27 stroke=%27%23000%27 stroke-width=%271.5%27/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 15px center;
+  background-size: 10px 6px;
+}
+.sm-product-grid-wrapper .sm-grid-header .sm-ordering select:hover, .sm-product-grid-wrapper .sm-grid-header .sm-ordering select:focus {
+  border-color: #000;
+}
+.sm-product-grid-wrapper .sm-main-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--sm-grid-columns, 4), 1fr);
+  gap: 40px 20px;
+}
+.sm-product-grid-wrapper .sm-grid-pagination {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+.sm-product-grid-wrapper .sm-grid-pagination nav.woocommerce-pagination ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sm-product-grid-wrapper .sm-grid-pagination nav.woocommerce-pagination ul li a, .sm-product-grid-wrapper .sm-grid-pagination nav.woocommerce-pagination ul li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #eee;
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.sm-product-grid-wrapper .sm-grid-pagination nav.woocommerce-pagination ul li a.current, .sm-product-grid-wrapper .sm-grid-pagination nav.woocommerce-pagination ul li a:hover, .sm-product-grid-wrapper .sm-grid-pagination nav.woocommerce-pagination ul li span.current, .sm-product-grid-wrapper .sm-grid-pagination nav.woocommerce-pagination ul li span:hover {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+.sm-product-grid-wrapper .sm-grid-pagination nav.woocommerce-pagination ul li .prev, .sm-product-grid-wrapper .sm-grid-pagination nav.woocommerce-pagination ul li .next {
+  text-indent: -9999px;
+  position: relative;
+}
+.sm-product-grid-wrapper .sm-grid-pagination nav.woocommerce-pagination ul li .prev::after, .sm-product-grid-wrapper .sm-grid-pagination nav.woocommerce-pagination ul li .next::after {
+  content: "❮";
+  text-indent: 0;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+.sm-product-grid-wrapper .sm-grid-pagination nav.woocommerce-pagination ul li .next::after {
+  content: "❯";
+}
+.sm-product-grid-wrapper .sm-no-products {
+  text-align: center;
+  padding: 100px 0;
+  font-size: 18px;
+  color: #767676;
+}
+.sm-product-grid-editor-placeholder {
+  background: #f8f8f8;
+  border: 2px dashed #ddd;
+  padding: 40px;
+  text-align: center;
+}
+.sm-product-grid-editor-placeholder h3 {
+  margin-top: 0;
+}
+@media (max-width: 1200px) {
+  .sm-product-grid-wrapper .sm-main-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .sm-product-grid-wrapper .sm-main-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 15px;
+  }
+  .sm-product-grid-wrapper .sm-grid-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}

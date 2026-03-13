@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "sm/product-listing",
+	"version": "0.1.0",
+	"title": "SM Product Listing Section",
+	"category": "sm-blocks",
+	"icon": "layout",
+	"description": "Block tổng hợp bao gồm Bộ lọc (Filter) bên trái và Lưới sản phẩm (Grid) bên phải.",
+	"attributes": {
+		"columns": {
+			"type": "number",
+			"default": 3
+		},
+		"showFilter": {
+			"type": "boolean",
+			"default": true
+		},
+		"filterWidth": {
+			"type": "string",
+			"default": "25%"
+		},
+		"gridWidth": {
+			"type": "string",
+			"default": "75%"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"textdomain": "my-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"viewScript": "file:./view.js",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

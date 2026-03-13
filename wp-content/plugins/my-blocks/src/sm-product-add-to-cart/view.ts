@@ -179,8 +179,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Fallback to jQuery for custom WooCommerce events since they trigger it via jQuery
     if (typeof (window as any).jQuery !== 'undefined') {
-        (window as any).jQuery(document).on('found_variation', initSwatches);
-        (window as any).jQuery(document).on('updated_checkout', initQuantityButtons); // Sometimes WC refreshes parts via AJAX
+        (window as any).jQuery(document).on('found_variation', () => {
+            initSwatches();
+            initQuantityButtons();
+        });
+        (window as any).jQuery(document).on('updated_checkout', initQuantityButtons);
         (window as any).jQuery('.variations_form').on('reset_data', () => {
              document.querySelectorAll('.sm-swatches-container .sm-swatch').forEach(s => s.classList.remove('selected'));
         });

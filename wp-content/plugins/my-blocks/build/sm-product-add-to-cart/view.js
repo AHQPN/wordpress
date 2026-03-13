@@ -1,1 +1,191 @@
-document.addEventListener("DOMContentLoaded",()=>{function e(){const e=document.querySelector("form.variations_form");e&&e.querySelectorAll("table.variations select").forEach(t=>{const n=t,s=n.closest("td.value");if(!s)return;if(s.querySelector(".sm-swatches-container"))return;const a=n.getAttribute("name");if(!a)return;const r=a.toLowerCase().includes("color");n.style.display="none";const l=document.createElement("div");l.className="sm-swatches-container",l.style.display="flex",l.style.gap="10px",l.style.flexWrap="wrap",l.style.marginTop="5px";let o=null;if(Array.from(n.options).forEach(e=>{const t=e;if(""===t.value)return;o||(o=t);const s=document.createElement("div");s.className="sm-swatch "+(r?"sm-swatch-color":"sm-swatch-size"),s.dataset.value=t.value,s.title=t.text,r?(s.style.width="30px",s.style.height="30px",s.style.borderRadius="50%",s.style.backgroundColor=t.value,s.style.border="2px solid #ddd",s.style.cursor="pointer"):(s.innerText=t.text,s.style.minWidth="40px",s.style.padding="5px 10px",s.style.border="1px solid #ddd",s.style.textAlign="center",s.style.cursor="pointer",s.style.fontSize="14px"),s.addEventListener("click",()=>{l.querySelectorAll(".sm-swatch").forEach(e=>e.classList.remove("selected")),s.classList.add("selected"),n.value=t.value;const e=new Event("change",{bubbles:!0});n.dispatchEvent(e)}),l.appendChild(s)}),n.parentNode&&n.parentNode.insertBefore(l,n.nextSibling),e.addEventListener("reset_data",()=>{l.querySelectorAll(".sm-swatch").forEach(e=>e.classList.remove("selected"))}),n.value){const e=l.querySelector(`[data-value="${n.value}"]`);e&&e.click()}else if(o){const e=l.querySelector(`[data-value="${o.value}"]`);e&&e.click()}})}function t(){document.querySelectorAll("div.quantity:not(.hidden)").forEach(e=>{if(e.querySelector(".qty-btn"))return;const t=e.querySelector("input.qty");if(!t)return;const n=!!e.closest(".grouped_form"),s=document.createElement("button");s.type="button",s.className="qty-btn minus",s.innerText="-";const a=document.createElement("button");if(a.type="button",a.className="qty-btn plus",a.innerText="+",e.insertBefore(s,t),e.appendChild(a),e.classList.add("custom-qty-wrapper"),s.addEventListener("click",()=>{let e=parseFloat(t.value)||0,s=parseFloat(t.min)||(n?0:1),a=parseFloat(t.step)||1;e>s&&(t.value=String(e-a),t.dispatchEvent(new Event("change",{bubbles:!0})))}),a.addEventListener("click",()=>{let e=parseFloat(t.value)||0,n=parseFloat(t.max)||1/0,s=parseFloat(t.step)||1;e<n&&(t.value=String(e+s),t.dispatchEvent(new Event("change",{bubbles:!0})))}),n){const e=document.querySelectorAll(".grouped_form input.qty");let n=0;e.forEach(e=>n+=parseFloat(e.value)||0),0===n&&e.length>0&&t===e[0]&&(t.value="1")}})}e(),t(),void 0!==window.jQuery&&(window.jQuery(document).on("found_variation",e),window.jQuery(document).on("updated_checkout",t),window.jQuery(".variations_form").on("reset_data",()=>{document.querySelectorAll(".sm-swatches-container .sm-swatch").forEach(e=>e.classList.remove("selected"))}))});
+/******/ (() => { // webpackBootstrap
+/*!********************************************!*\
+  !*** ./src/sm-product-add-to-cart/view.ts ***!
+  \********************************************/
+document.addEventListener('DOMContentLoaded', () => {
+  // Basic Swatch Implementation
+  function initSwatches() {
+    const form = document.querySelector('form.variations_form');
+    if (!form) return;
+    const selects = form.querySelectorAll('table.variations select');
+    selects.forEach(selectEl => {
+      const select = selectEl;
+      const tdValue = select.closest('td.value');
+      if (!tdValue) return;
+
+      // Check if already initialized to prevent duplicate swatches
+      const existingContainer = tdValue.querySelector('.sm-swatches-container');
+      if (existingContainer) return;
+      const attributeName = select.getAttribute('name'); // e.g., attribute_pa_color, attribute_pa_size
+      if (!attributeName) return;
+      const isColor = attributeName.toLowerCase().includes('color');
+
+      // Hide the original select
+      select.style.display = 'none';
+
+      // Create swatch container
+      const container = document.createElement('div');
+      container.className = 'sm-swatches-container';
+      container.style.display = 'flex';
+      container.style.gap = '10px';
+      container.style.flexWrap = 'wrap';
+      container.style.marginTop = '5px';
+      let firstValidOption = null;
+
+      // Create swatches for each option
+      Array.from(select.options).forEach(optionEl => {
+        const option = optionEl;
+        if (option.value === '') return; // Skip the "Choose an option"
+
+        if (!firstValidOption) firstValidOption = option;
+        const swatch = document.createElement('div');
+        swatch.className = `sm-swatch ${isColor ? 'sm-swatch-color' : 'sm-swatch-size'}`;
+        swatch.dataset.value = option.value;
+        swatch.title = option.text;
+
+        // Styling logic based on attribute type
+        if (isColor) {
+          swatch.style.width = '30px';
+          swatch.style.height = '30px';
+          swatch.style.borderRadius = '50%';
+          swatch.style.backgroundColor = option.value; // very basic assumption, often needs a map or data attribute
+          swatch.style.border = '2px solid #ddd';
+          swatch.style.cursor = 'pointer';
+        } else {
+          swatch.innerText = option.text;
+          swatch.style.minWidth = '40px';
+          swatch.style.padding = '5px 10px';
+          swatch.style.border = '1px solid #ddd';
+          swatch.style.textAlign = 'center';
+          swatch.style.cursor = 'pointer';
+          swatch.style.fontSize = '14px';
+        }
+
+        // Handle click
+        swatch.addEventListener('click', () => {
+          // Remove selected class from siblings
+          container.querySelectorAll('.sm-swatch').forEach(s => s.classList.remove('selected'));
+          swatch.classList.add('selected');
+
+          // Update hidden select
+          select.value = option.value;
+
+          // Trigger change event for WooCommerce to update price/image
+          const event = new Event('change', {
+            bubbles: true
+          });
+          select.dispatchEvent(event);
+        });
+        container.appendChild(swatch);
+      });
+      if (select.parentNode) {
+        select.parentNode.insertBefore(container, select.nextSibling);
+      }
+
+      // Listen for WooCommerce reset event to clear swatch selection
+      form.addEventListener('reset_data', () => {
+        container.querySelectorAll('.sm-swatch').forEach(s => s.classList.remove('selected'));
+        // Optional: Force re-select first valid option if they clear it
+        // if (firstValidOption) {
+        //      const targetSwatch = container.querySelector(`[data-value="${firstValidOption.value}"]`) as HTMLElement;
+        //      if (targetSwatch) targetSwatch.click();
+        // }
+      });
+
+      // Set initial state: Use pre-selected if available, else auto-select first option
+      if (select.value) {
+        const preSelected = container.querySelector(`[data-value="${select.value}"]`);
+        if (preSelected) preSelected.click();
+      } else if (firstValidOption) {
+        const autoSelected = container.querySelector(`[data-value="${firstValidOption.value}"]`);
+        if (autoSelected) autoSelected.click();
+      }
+    });
+  }
+
+  // Custom Quantity Buttons (+ / -)
+  function initQuantityButtons() {
+    const qtyInputs = document.querySelectorAll('div.quantity:not(.hidden)');
+    qtyInputs.forEach(qtyDiv => {
+      // Prevent multiple generations
+      if (qtyDiv.querySelector('.qty-btn')) return;
+      const input = qtyDiv.querySelector('input.qty');
+      if (!input) return;
+
+      // Grouped product inputs often have class 'qty' and default to 0. We might auto-select first row to 1.
+      const isGrouped = !!qtyDiv.closest('.grouped_form');
+
+      // Create minus button
+      const minusBtn = document.createElement('button');
+      minusBtn.type = 'button';
+      minusBtn.className = 'qty-btn minus';
+      minusBtn.innerText = '-';
+
+      // Create plus button
+      const plusBtn = document.createElement('button');
+      plusBtn.type = 'button';
+      plusBtn.className = 'qty-btn plus';
+      plusBtn.innerText = '+';
+
+      // Insert into DOM
+      qtyDiv.insertBefore(minusBtn, input);
+      qtyDiv.appendChild(plusBtn);
+
+      // Add styles dynamically or assume they'll be in CSS. We'll rely on our style.scss for design.
+      qtyDiv.classList.add('custom-qty-wrapper');
+
+      // Event listeners
+      minusBtn.addEventListener('click', () => {
+        let currentVal = parseFloat(input.value) || 0;
+        let min = parseFloat(input.min) || (isGrouped ? 0 : 1);
+        let step = parseFloat(input.step) || 1;
+        if (currentVal > min) {
+          input.value = String(currentVal - step);
+          input.dispatchEvent(new Event('change', {
+            bubbles: true
+          }));
+        }
+      });
+      plusBtn.addEventListener('click', () => {
+        let currentVal = parseFloat(input.value) || 0;
+        let max = parseFloat(input.max) || Infinity;
+        let step = parseFloat(input.step) || 1;
+        if (currentVal < max) {
+          input.value = String(currentVal + step);
+          input.dispatchEvent(new Event('change', {
+            bubbles: true
+          }));
+        }
+      });
+
+      // Small UX trick for Grouped Products: If it's a grouped form and ALL quantities are 0, make the first one 1
+      if (isGrouped) {
+        const allGroupedQty = document.querySelectorAll('.grouped_form input.qty');
+        let sum = 0;
+        allGroupedQty.forEach(q => sum += parseFloat(q.value) || 0);
+        if (sum === 0 && allGroupedQty.length > 0 && input === allGroupedQty[0]) {
+          input.value = '1';
+        }
+      }
+    });
+  }
+
+  // Initialize on load
+  initSwatches();
+  initQuantityButtons();
+
+  // Fallback to jQuery for custom WooCommerce events since they trigger it via jQuery
+  if (typeof window.jQuery !== 'undefined') {
+    window.jQuery(document).on('found_variation', () => {
+      initSwatches();
+      initQuantityButtons();
+    });
+    window.jQuery(document).on('updated_checkout', initQuantityButtons);
+    window.jQuery('.variations_form').on('reset_data', () => {
+      document.querySelectorAll('.sm-swatches-container .sm-swatch').forEach(s => s.classList.remove('selected'));
+    });
+  }
+});
+/******/ })()
+;
+//# sourceMappingURL=view.js.map

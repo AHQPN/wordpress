@@ -10,10 +10,32 @@
 
 	.sm-slider-track {
 		display: flex;
+		flex-wrap: nowrap;
 		gap: 20px;
 		transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-		touch-action: pan-y; // Enable vertical scroll, disable horizontal browser scroll
+		touch-action: pan-y;
 		will-change: transform;
+	}
+
+	.sm-slider-item,
+	.sm-cl-item,
+	.sm-fp-item {
+		flex-shrink: 0;
+	}
+}
+
+// Column logic fallback for and blocks using data-columns
+[data-columns="2"] { --cols: 2; }
+[data-columns="3"] { --cols: 3; }
+[data-columns="4"] { --cols: 4; }
+[data-columns="5"] { --cols: 5; }
+[data-columns="6"] { --cols: 6; }
+
+.sm-slider-track {
+	.sm-cl-item,
+	.sm-fp-item,
+	.sm-slider-item {
+		width: calc((100% - (20px * (var(--cols, 4) - 1))) / var(--cols, 4));
 	}
 }
 

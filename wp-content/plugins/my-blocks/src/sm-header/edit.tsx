@@ -1,117 +1,41 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, MediaUpload, MediaUploadCheck, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, Button, ToggleControl, TextControl, RangeControl, ColorPalette } from '@wordpress/components';
-import { useState } from '@wordpress/element';
+import { PanelBody, Button, ToggleControl, TextControl, RangeControl, ColorPalette, SelectControl, Spinner } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
 import './editor.scss';
 
-interface MenuItem { label: string; url: string; children: MenuItem[]; }
-
 interface Attrs {
-	logoUrl: string; logoWidth: number; siteName: string; menuItems: MenuItem[];
+	logoUrl: string; logoWidth: number; siteName: string; menuId: number;
 	bgColor: string; textColor: string;
 	showSearch: boolean; showLocale: boolean; showStoreLocator: boolean; storeLocatorUrl: string;
 	showAccount: boolean; showCart: boolean; stickyHeader: boolean;
 }
 
-/* ---- Recursive menu editor ---- */
-function MenuItemEditor( { item, path, onUpdate, onRemove, depth }: {
-	item: MenuItem; path: number[]; depth: number;
-	onUpdate: ( path: number[], field: string, value: any ) => void;
-	onRemove: ( path: number[] ) => void;
-} ) {
-	const [ open, setOpen ] = useState( false );
-	const indent = depth * 16;
-	const colors = [ '#f7f7f7', '#eef2ff', '#fff7ed' ];
-	const bg = colors[ depth ] || '#f7f7f7';
-
-	return (
-		<div style={ { marginLeft: `${ indent }px`, marginBottom: '4px' } }>
-			<div style={ { display: 'flex', alignItems: 'center', gap: '4px', background: bg, padding: '6px 8px', borderRadius: '4px', border: '1px solid #ddd' } }>
-				<span style={ { fontWeight: 600, fontSize: '11px', color: '#666', minWidth: '14px' } }>L{ depth }</span>
-				<TextControl
-					hideLabelFromVision label="Label"
-					value={ item.label }
-					onChange={ ( v ) => onUpdate( path, 'label', v ) }
-					__nextHasNoMarginBottom
-					style={ { flex: 1, marginBottom: 0 } }
-				/>
-				{ depth < 2 && (
-					<Button isSmall variant="secondary" onClick={ () => setOpen( ! open ) }>
-						{ open ? '▲' : `▼ (${ item.children.length })` }
-					</Button>
-				) }
-				<Button isSmall isDestructive onClick={ () => onRemove( path ) }>✕</Button>
-			</div>
-			{ open && (
-				<div style={ { marginLeft: '8px', borderLeft: '2px solid #ccc', paddingLeft: '8px', marginTop: '4px' } }>
-					<TextControl
-						label={ __( 'URL', 'my-blocks' ) }
-						value={ item.url }
-						onChange={ ( v ) => onUpdate( path, 'url', v ) }
-						__nextHasNoMarginBottom
-						style={ { marginBottom: '8px' } }
-					/>
-					{ item.children.map( ( child, ci ) => (
-						<MenuItemEditor
-							key={ ci }
-							item={ child }
-							path={ [ ...path, ci ] }
-							depth={ depth + 1 }
-							onUpdate={ onUpdate }
-							onRemove={ onRemove }
-						/>
-					) ) }
-					{ depth < 2 && (
-						<Button isSmall variant="secondary" onClick={ () => {
-							onUpdate( path, 'children', [ ...item.children, { label: 'New', url: '#', children: [] } ] );
-						} } style={ { marginTop: '4px' } }>
-							+ Thêm sub (L{ depth + 1 })
-						</Button>
-					) }
-				</div>
-			) }
-		</div>
-	);
-}
-
 export default function Edit( { attributes, setAttributes }: { attributes: Attrs; setAttributes: ( a: Partial<Attrs> ) => void } ) {
-	const { logoUrl, logoWidth, siteName, menuItems, bgColor, textColor, showSearch, showLocale, showStoreLocator, storeLocatorUrl, showAccount, showCart, stickyHeader } = attributes;
+	const { logoUrl, logoWidth, siteName, menuId, bgColor, textColor, showSearch, showLocale, showStoreLocator, storeLocatorUrl, showAccount, showCart, stickyHeader } = attributes;
 
 	const blockProps = useBlockProps( {
-		className: 'sm-header-wrapper',
+		className: 'sm-header-wrapper sm-header-editor-preview',
 		'data-sticky': stickyHeader ? 'true' : 'false',
 		style: { '--sm-header-bg': bgColor, '--sm-header-text': textColor } as React.CSSProperties
 	} );
 
-	/* Deep update helper for nested menu */
-	const deepUpdate = ( items: MenuItem[], path: number[], field: string, value: any ): MenuItem[] => {
-		const copy = [ ...items ];
-		if ( path.length === 1 ) {
-			copy[ path[ 0 ] ] = { ...copy[ path[ 0 ] ], [ field ]: value };
-		} else {
-			const [ head, ...rest ] = path;
-			copy[ head ] = { ...copy[ head ], children: deepUpdate( copy[ head ].children, rest, field, value ) };
-		}
-		return copy;
-	};
+	// Fetch available WordPress navigation menus
+	const { menus, isResolving } = useSelect( ( select ) => {
+		const { getEntityRecords, isResolving } = select( 'core' ) as any;
+		return {
+			menus: getEntityRecords( 'taxonomy', 'nav_menu', { per_page: -1 } ),
+			isResolving: isResolving( 'core', 'getEntityRecords', [ 'taxonomy', 'nav_menu', { per_page: -1 } ] ),
+		};
+	}, [] );
 
-	const deepRemove = ( items: MenuItem[], path: number[] ): MenuItem[] => {
-		const copy = [ ...items ];
-		if ( path.length === 1 ) {
-			copy.splice( path[ 0 ], 1 );
-		} else {
-			const [ head, ...rest ] = path;
-			copy[ head ] = { ...copy[ head ], children: deepRemove( copy[ head ].children, rest ) };
-		}
-		return copy;
-	};
-
-	const handleUpdate = ( path: number[], field: string, value: any ) => {
-		setAttributes( { menuItems: deepUpdate( menuItems, path, field, value ) } );
-	};
-	const handleRemove = ( path: number[] ) => {
-		setAttributes( { menuItems: deepRemove( menuItems, path ) } );
-	};
+	const menuOptions = [
+		{ label: __( 'Select a menu', 'my-blocks' ), value: 0 },
+		...( menus || [] ).map( ( menu: any ) => ( {
+			label: menu.name,
+			value: menu.id,
+		} ) ),
+	];
 
 	return (
 		<>
@@ -136,23 +60,25 @@ export default function Edit( { attributes, setAttributes }: { attributes: Attrs
 					<TextControl label={ __( 'Tên thương hiệu (fallback)', 'my-blocks' ) } value={ siteName } onChange={ ( v ) => setAttributes( { siteName: v } ) } />
 				</PanelBody>
 
-				<PanelBody title={ __( 'Navigation (Menu đa cấp)', 'my-blocks' ) } initialOpen={ false }>
-					<p style={ { fontSize: '12px', color: '#666', marginBottom: '12px' } }>
-						Hỗ trợ 3 cấp: <strong>L0</strong> (top) → <strong>L1</strong> (mega column) → <strong>L2</strong> (sub-links)
-					</p>
-					{ menuItems.map( ( item, i ) => (
-						<MenuItemEditor
-							key={ i }
-							item={ item }
-							path={ [ i ] }
-							depth={ 0 }
-							onUpdate={ handleUpdate }
-							onRemove={ handleRemove }
-						/>
-					) ) }
-					<Button variant="primary" onClick={ () => setAttributes( { menuItems: [ ...menuItems, { label: 'New', url: '#', children: [] } ] } ) } style={ { marginTop: '8px' } }>
-						+ Thêm menu (L0)
-					</Button>
+				<PanelBody title={ __( 'Navigation Menu', 'my-blocks' ) } initialOpen={ true }>
+					{ isResolving ? (
+						<Spinner />
+					) : (
+						<>
+							<SelectControl
+								label={ __( 'Select Menu', 'my-blocks' ) }
+								value={ String( menuId ) }
+								options={ menuOptions }
+								onChange={ ( value ) => setAttributes( { menuId: parseInt( value, 10 ) } ) }
+								help={ __( 'Select a navigation menu created in Appearance -> Menus. This block supports up to 3 levels: Top level -> Mega columns -> Links.', 'my-blocks' ) }
+							/>
+							{ ! menus?.length && (
+								<p style={ { fontSize: '13px', color: '#d63638' } }>
+									{ __( 'No menus found. Please create one in Appearance -> Menus.', 'my-blocks' ) }
+								</p>
+							) }
+						</>
+					) }
 				</PanelBody>
 
 				<PanelBody title={ __( 'Utilities', 'my-blocks' ) } initialOpen={ false }>
@@ -203,19 +129,14 @@ export default function Edit( { attributes, setAttributes }: { attributes: Attrs
 							</span>
 						</div>
 
-						{ /* Nav CENTER */ }
+						{ /* Nav CENTER placeholder for editor */ }
 						<nav className="sm-header__nav">
 							<ul className="sm-header__nav-list">
-								{ menuItems.map( ( item, i ) => (
-									<li className={ `sm-header__nav-item${ item.children.length > 0 ? ' has-submenu' : '' }` } key={ i }>
-										<span className="sm-header__nav-link">
-											<span>{ item.label }</span>
-											{ item.children.length > 0 && (
-												<svg className="sm-icon-chevron" width="8" height="5" viewBox="0 0 8 5" fill="none"><path d="M1 1l3 3 3-3" stroke="currentColor" strokeWidth="1.5"/></svg>
-											) }
-										</span>
-									</li>
-								) ) }
+								<li className="sm-header__nav-item">
+                                    <span className="sm-header__nav-link" style={{ padding: '10px 15px', border: '1px dashed #ccc', borderRadius: '4px', opacity: 0.7 }}>
+                                        { menuId ? __( 'Dynamic Menu Selected', 'my-blocks' ) : __( 'Select a Menu', 'my-blocks' ) }
+                                    </span>
+                                </li>
 								{ showSearch && (
 									<li className="sm-header__nav-item sm-header__nav-item--search">
 										<span className="sm-header__nav-link sm-header__search-trigger">

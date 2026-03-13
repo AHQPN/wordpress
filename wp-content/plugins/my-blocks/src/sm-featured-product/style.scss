@@ -12,9 +12,28 @@
 	margin: 0 auto;
 	padding: 0 20px;
 }
+
+.sm-fp-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 40px !important;
+	border-bottom: 1px solid #eaeaea;
+	padding-bottom: 20px;
+
+	.sm-fp-section-title {
+		font-size: 28px !important;
+		font-weight: 800 !important;
+		text-transform: uppercase;
+		margin: 0;
+		color: #1a1a1a;
+		line-height: 1.2;
+	}
+}
+
 .sm-fp-item {
 	.sm-item-img {
-		max-height: 500px;
+		aspect-ratio: 1 / 1; // Ensure square like Related Products
 	}
 }
 

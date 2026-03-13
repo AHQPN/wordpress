@@ -257,7 +257,7 @@ export default function Edit( { attributes, setAttributes }: any ) {
 					<div
 						className="sm-cl-track sm-slider-track"
 						style={ {
-							gridTemplateColumns: `repeat(${ items.length || columns }, calc(${ 100 / columns }% - 20px))`,
+							gridTemplateColumns: `repeat(${ columns }, 1fr)`,
 							display: 'grid',
 							gap: '20px'
 						} }
@@ -267,7 +267,7 @@ export default function Edit( { attributes, setAttributes }: any ) {
 								Chưa có item. Hãy import từ Menu hoặc thêm thủ công.
 							</p>
 						) }
-						{ items.map( ( item: CollectionItem, i: number ) => (
+						{ items.slice( 0, columns ).map( ( item: CollectionItem, i: number ) => (
 							<div className="sm-cl-item sm-item-card" key={ i }>
 								<MediaUploadCheck>
 									<MediaUpload

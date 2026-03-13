@@ -1,0 +1,1 @@
+{"version":3,"file":"sm-blog-slider/index.css","mappings":";;;AACC;EACC;AAAF,C","sources":["webpack://my-blocks/./src/sm-blog-slider/editor.scss"],"sourcesContent":[".sm-blog-slider-editor {\n\th2, h3, p {\n\t\tcolor: inherit !important;\n\t}\n}\n"],"names":[],"sourceRoot":""}

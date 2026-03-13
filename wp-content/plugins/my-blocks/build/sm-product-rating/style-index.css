@@ -1,1 +1,62 @@
-.sm-product-rating{margin-bottom:15px}.sm-product-rating .sm-rating-inner{align-items:center;display:flex;gap:10px}.sm-product-rating .star-rating{color:#ffb400;display:inline-block;float:none;font-family:star;font-size:16px;height:16px;position:relative;width:80px}.sm-product-rating .star-rating:before{color:#ccc;content:"sssss";left:0;position:absolute;top:0}.sm-product-rating .star-rating span{float:left;left:0;overflow:hidden;padding-top:1.5em;position:absolute;top:0}.sm-product-rating .star-rating span:before{content:"SSSSS";left:0;position:absolute;top:0}.sm-product-rating .sm-review-count{color:#767676;font-size:14px;font-weight:500}.sm-product-rating-preview{align-items:center;display:flex;gap:8px}.sm-product-rating-preview .stars{color:#ffb400;font-size:18px}.sm-product-rating-preview .count{color:#666;font-size:14px}
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/sm-product-rating/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+.sm-product-rating {
+  margin-bottom: 15px;
+}
+.sm-product-rating .sm-rating-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sm-product-rating .star-rating {
+  float: none;
+  width: 80px;
+  height: 16px;
+  font-family: "star";
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  color: #ffb400;
+}
+.sm-product-rating .star-rating::before {
+  content: "sssss";
+  color: #ccc;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.sm-product-rating .star-rating span {
+  overflow: hidden;
+  float: left;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding-top: 1.5em;
+}
+.sm-product-rating .star-rating span::before {
+  content: "SSSSS";
+  top: 0;
+  position: absolute;
+  left: 0;
+}
+.sm-product-rating .sm-review-count {
+  font-size: 14px;
+  color: #767676;
+  font-weight: 500;
+}
+.sm-product-rating-preview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sm-product-rating-preview .stars {
+  color: #ffb400;
+  font-size: 18px;
+}
+.sm-product-rating-preview .count {
+  font-size: 14px;
+  color: #666;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

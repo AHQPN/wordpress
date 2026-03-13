@@ -55,3 +55,70 @@ function sm_blocks_fix_svg_filetype( $data, $file, $filename, $mimes ) {
 	return $data;
 }
 add_filter( 'wp_check_filetype_and_ext', 'sm_blocks_fix_svg_filetype', 10, 4 );
+
+
+/**
+ * Handle custom URL parameters for filtering (e.g. stock_status).
+ */
+function sm_handle_custom_product_filters( $query ) {
+	if ( is_admin() || ! $query->is_main_query() || ! is_post_type_archive( 'product' ) && ! is_product_taxonomy() ) {
+		return;
+	}
+
+	// Filter by Stock Status
+	if ( isset( $_GET['stock_status'] ) && ! empty( $_GET['stock_status'] ) ) {
+		$status = sanitize_text_field( $_GET['stock_status'] );
+		$meta_query = $query->get( 'meta_query' ) ?: array();
+		$meta_query[] = array(
+			'key'   => '_stock_status',
+			'value' => $status,
+		);
+		$query->set( 'meta_query', $meta_query );
+	}
+}
+add_action( 'pre_get_posts', 'sm_handle_custom_product_filters' );
+
+
+/**
+ * AJAX handler – Live product search for SM Header.
+ */
+function sm_header_product_search() {
+	check_ajax_referer( 'sm_header_search_nonce', 'nonce' );
+
+	$keyword = isset( $_GET['keyword'] ) ? sanitize_text_field( $_GET['keyword'] ) : '';
+	$results = array();
+
+	if ( strlen( $keyword ) >= 2 ) {
+		$query = new WP_Query( array(
+			'post_type'      => 'product',
+			'post_status'    => 'publish',
+			's'              => $keyword,
+			'posts_per_page' => 8,
+		) );
+
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$product = wc_get_product( get_the_ID() );
+				if ( ! $product ) continue;
+
+				$results[] = array(
+					'id'        => $product->get_id(),
+					'name'      => $product->get_name(),
+					'permalink' => get_permalink(),
+					'thumbnail' => get_the_post_thumbnail_url( get_the_ID(), 'woocommerce_thumbnail' ) ?: wc_placeholder_img_src( 'woocommerce_thumbnail' ),
+					'price'     => $product->get_price_html(),
+				);
+			}
+			wp_reset_postdata();
+		}
+	}
+
+	wp_send_json_success( array(
+		'products'   => $results,
+		'keyword'    => $keyword,
+		'search_url' => add_query_arg( array( 's' => $keyword, 'post_type' => 'product' ), home_url( '/' ) ),
+	) );
+}
+add_action( 'wp_ajax_sm_header_search', 'sm_header_product_search' );
+add_action( 'wp_ajax_nopriv_sm_header_search', 'sm_header_product_search' );

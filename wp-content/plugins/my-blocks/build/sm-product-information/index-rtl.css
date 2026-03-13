@@ -1,1 +1,17 @@
-.sm-product-information-editor{background:#fdfdfd;border:1px dashed #ccc;padding:20px}.sm-product-information-editor .sm-pi-top-section{border:1px dashed #e0e0e0;padding:10px}.sm-product-information-editor .sm-pi-bottom-section{border:1px dashed #e0e0e0;margin-top:20px;padding:10px}
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/sm-product-information/editor.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.sm-product-information-editor {
+  border: 1px dashed #ccc;
+  padding: 20px;
+  background: #fdfdfd;
+}
+.sm-product-information-editor .sm-pi-top-section {
+  border: 1px dashed #e0e0e0;
+  padding: 10px;
+}
+.sm-product-information-editor .sm-pi-bottom-section {
+  border: 1px dashed #e0e0e0;
+  padding: 10px;
+  margin-top: 20px;
+}

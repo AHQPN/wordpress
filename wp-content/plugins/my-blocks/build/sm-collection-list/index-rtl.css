@@ -1,1 +1,23 @@
-.sm-collection-list .sm-slider-track,.wp-block-sm-collection-list .sm-slider-track{display:flex;flex-wrap:nowrap;gap:20px}.sm-collection-list .sm-item-img,.wp-block-sm-collection-list .sm-item-img{align-items:center;color:#999;cursor:pointer;display:flex;font-size:14px;justify-content:center}.sm-collection-list .sm-item-img:hover,.wp-block-sm-collection-list .sm-item-img:hover{background:#e5e2dc}
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/sm-collection-list/editor.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+/* Editor-only styles for SM Collection List */
+.wp-block-sm-collection-list .sm-slider-track,
+.sm-collection-list .sm-slider-track {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+.wp-block-sm-collection-list .sm-item-img,
+.sm-collection-list .sm-item-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 14px;
+  cursor: pointer;
+}
+.wp-block-sm-collection-list .sm-item-img:hover,
+.sm-collection-list .sm-item-img:hover {
+  background: #e5e2dc;
+}

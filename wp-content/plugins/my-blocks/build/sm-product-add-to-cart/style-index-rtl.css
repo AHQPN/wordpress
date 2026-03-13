@@ -1,0 +1,110 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/sm-product-add-to-cart/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.sm-product-atc-container {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.sm-product-atc-container .quantity {
+  margin-bottom: 0;
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+.sm-product-atc-container .quantity.custom-qty-wrapper {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  height: 44px;
+  box-sizing: border-box;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.sm-product-atc-container .quantity.custom-qty-wrapper .qty-btn {
+  background: #fff;
+  border: none;
+  width: 35px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.sm-product-atc-container .quantity.custom-qty-wrapper .qty-btn:hover {
+  background: #f5f5f5;
+}
+.sm-product-atc-container .quantity.custom-qty-wrapper .qty-btn:focus {
+  outline: none;
+}
+.sm-product-atc-container .quantity.custom-qty-wrapper input.qty {
+  width: 50px;
+  padding: 0;
+  border: none;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  font-size: 16px;
+  text-align: center;
+  height: 42px;
+  border-radius: 0;
+  font-weight: 600;
+  background: #fff;
+}
+.sm-product-atc-container .quantity.custom-qty-wrapper input.qty:focus {
+  outline: none;
+  background: #fafafa;
+}
+.sm-product-atc-container .quantity.custom-qty-wrapper input.qty::-webkit-outer-spin-button, .sm-product-atc-container .quantity.custom-qty-wrapper input.qty::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.sm-product-atc-container .quantity.custom-qty-wrapper input.qty[type=number] {
+  -moz-appearance: textfield;
+}
+.sm-product-atc-container button.single_add_to_cart_button {
+  background: #000;
+  color: #fff;
+  padding: 0 30px;
+  border-radius: 0;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  height: 44px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.sm-product-atc-container button.single_add_to_cart_button:hover {
+  background: #333;
+}
+.sm-product-atc-container button.single_add_to_cart_button.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.sm-product-atc-container .woocommerce-variation-add-to-cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+.sm-product-atc-container .grouped_form .woocommerce-grouped-product-list {
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+.sm-product-atc-container .grouped_form .woocommerce-grouped-product-list td {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+.sm-product-atc-container .grouped_form button.single_add_to_cart_button {
+  width: 100%;
+  margin-right: 0;
+}

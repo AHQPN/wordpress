@@ -1,1 +1,30 @@
-document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".sm-blog-slider").forEach(e=>{const t=e.querySelectorAll(".sm-blog-slide"),n=e.querySelector(".sm-nav-prev"),r=e.querySelector(".sm-nav-next"),c=e.querySelector(".sm-nav-counter .current");let l=0;const o=t.length,s=e=>{t[l].classList.remove("active"),l=(e+o)%o,t[l].classList.add("active"),c&&(c.textContent=(l+1).toString())};n&&n.addEventListener("click",()=>s(l-1)),r&&r.addEventListener("click",()=>s(l+1))})});
+/******/ (() => { // webpackBootstrap
+/*!************************************!*\
+  !*** ./src/sm-blog-slider/view.ts ***!
+  \************************************/
+document.addEventListener('DOMContentLoaded', () => {
+  const sliders = document.querySelectorAll('.sm-blog-slider');
+  sliders.forEach(slider => {
+    const slides = slider.querySelectorAll('.sm-blog-slide');
+    const prevBtn = slider.querySelector('.sm-nav-prev');
+    const nextBtn = slider.querySelector('.sm-nav-next');
+    const counterCurrent = slider.querySelector('.sm-nav-counter .current');
+    let currentIndex = 0;
+    const total = slides.length;
+    const updateSlider = newIndex => {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (newIndex + total) % total;
+      slides[currentIndex].classList.add('active');
+      if (counterCurrent) counterCurrent.textContent = (currentIndex + 1).toString();
+    };
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => updateSlider(currentIndex - 1));
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => updateSlider(currentIndex + 1));
+    }
+  });
+});
+/******/ })()
+;
+//# sourceMappingURL=view.js.map

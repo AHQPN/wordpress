@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name='robots' content='max-image-preview:large, noindex, follow' />
+<title>My account &#8211; npshopi</title>
+<link rel="alternate" type="application/rss+xml" title="npshopi &raquo; Feed" href="http://localhost/wordpress/feed/" />
+<link rel="alternate" type="application/rss+xml" title="npshopi &raquo; Comments Feed" href="http://localhost/wordpress/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="http://localhost/wordpress/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%2Fwordpress%2Fmy-account%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="http://localhost/wordpress/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%2Fwordpress%2Fmy-account%2F&#038;format=xml" />
+<style id='wp-img-auto-sizes-contain-inline-css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='sm-header-style-inline-css'>
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/sm-header/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/* ===========================================
+   SM Header – Lacoste-style (ported from Shopify)
+   =========================================== */
+:root {
+  --sm-header-height: 80px;
+}
+/* ---- Wrapper & sticky ---- */
+.sm-header-wrapper {
+  position: relative;
+  z-index: 1000;
+}
+.sm-header-wrapper[data-sticky=true] {
+  position: sticky;
+  top: 0;
+}
+/* ---- Hide WP Admin Bar on Frontend ---- */
+#wpadminbar {
+  display: none !important;
+}
+html {
+  margin-top: 0 !important;
+}
+/* ---- Header bar ---- */
+.sm-header {
+  background: var(--sm-header-bg, #fff);
+  color: var(--sm-header-text, #000);
+  border-bottom: 1px solid #e5e5e5;
+  height: var(--sm-header-height);
+  z-index: 100;
+}
+.sm-header__inner {
+  max-width: 1750px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+}
+/* ---- Logo ---- */
+.sm-header__logo {
+  flex-shrink: 0;
+}
+.sm-header__logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+.sm-header__logo-img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+.sm-header__logo-text {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+/* ---- Navigation ---- */
+.sm-header__nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.sm-header__nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  align-items: center;
+}
+.sm-header__nav-item {
+  position: relative;
+}
+.sm-header__nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  color: var(--sm-header-text, #000);
+  text-decoration: none;
+  padding: 20px 14px;
+  height: var(--sm-header-height);
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.sm-header__nav-link:hover,
+.sm-header__nav-item.is-active > .sm-header__nav-link {
+  opacity: 0.6;
+}
+.sm-header__nav-link .sm-icon-chevron {
+  width: 8px;
+  height: 5px;
+  transition: transform 0.25s;
+}
+.sm-header__nav-item.is-active .sm-icon-chevron {
+  transform: rotate(180deg);
+}
+/* Search trigger in nav */
+.sm-header__nav-item--search .sm-header__nav-link {
+  padding: 20px 10px;
+}
+.sm-header__search-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+.sm-header__search-trigger svg {
+  width: 20px;
+  height: 20px;
+}
+/* ---- Utilities (right) ---- */
+.sm-header__utilities {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+.sm-header__utility-text {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+.sm-header__utility-text:hover {
+  opacity: 0.6;
+}
+.sm-header__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+.sm-header__icon-btn svg {
+  width: 22px;
+  height: 22px;
+}
+.sm-header__cart-btn {
+  position: relative;
+}
+.sm-header__cart-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: var(--sm-header-text, #000);
+  color: var(--sm-header-bg, #fff);
+  font-size: 9px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+/* ---- Hamburger (mobile only) ---- */
+.sm-header__hamburger {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  display: none;
+}
+.sm-header__hamburger svg {
+  width: 24px;
+  height: 24px;
+}
+/* ===========================================
+   MEGA MENU PANEL
+   =========================================== */
+.sm-mega {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  pointer-events: none;
+  visibility: hidden;
+}
+.sm-mega.is-open {
+  pointer-events: auto;
+  visibility: visible;
+}
+/* Dark overlay behind panel */
+.sm-mega__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.sm-mega.is-open .sm-mega__overlay {
+  opacity: 1;
+}
+/* Panel slides in from top */
+.sm-mega__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding-top: calc(var(--sm-header-height) + 10px);
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.sm-mega.is-open .sm-mega__panel {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* Close button */
+.sm-mega__close {
+  position: absolute;
+  top: calc(var(--sm-header-height) + 15px);
+  right: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #000;
+  z-index: 5;
+}
+.sm-mega__close svg {
+  width: 22px;
+  height: 22px;
+}
+/* Body */
+.sm-mega__body {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 30px 40px 40px;
+}
+/* Columns layout */
+.sm-mega__columns {
+  display: flex;
+  gap: 50px;
+}
+.sm-mega__col {
+  min-width: 140px;
+}
+.sm-mega__col-title,
+.sm-mega__col-title--link {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #000;
+  margin: 0 0 18px;
+  display: block;
+  text-decoration: none;
+}
+.sm-mega__col-title--link:hover {
+  text-decoration: underline;
+}
+.sm-mega__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sm-mega__link {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2;
+  transition: opacity 0.15s;
+}
+.sm-mega__link:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+/* ===========================================
+   MOBILE DRAWER
+   =========================================== */
+.sm-mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  visibility: hidden;
+}
+.sm-mobile-drawer.is-open {
+  pointer-events: auto;
+  visibility: visible;
+}
+.sm-mobile-drawer__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+  cursor: pointer;
+}
+.sm-mobile-drawer.is-open .sm-mobile-drawer__overlay {
+  opacity: 1;
+}
+.sm-mobile-drawer__panels {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.sm-mobile-drawer__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow-y: auto;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+}
+.sm-mobile-drawer__panel[data-panel-id=main] {
+  transform: translateX(0);
+}
+.sm-mobile-drawer__panel.is-active {
+  transform: translateX(0);
+  z-index: 2;
+}
+.sm-mobile-drawer__panel.is-parent-hidden {
+  transform: translateX(-30%);
+  opacity: 0.5;
+}
+.sm-mobile-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  background: inherit;
+  z-index: 10;
+  min-height: 60px;
+}
+.sm-mobile-drawer__back,
+.sm-mobile-drawer__close {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sm-mobile-drawer__breadcrumbs {
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  text-align: center;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+}
+.sm-mobile-drawer__breadcrumbs span:last-child {
+  color: #000;
+  font-weight: 700;
+}
+.sm-mobile-drawer__content {
+  padding: 20px;
+}
+.sm-mobile-drawer__panel-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+.sm-mobile-drawer__nav {
+  padding: 0 20px 40px;
+}
+.sm-mobile-drawer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sm-mobile-drawer__link,
+.sm-mobile-drawer__sub-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: inherit;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
+}
+.sm-mobile-drawer__sub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+}
+/* Secondary links in drawer */
+.sm-mobile-drawer__secondary {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+.sm-mobile-drawer__secondary-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sm-mobile-drawer__secondary-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+.sm-mobile-drawer__secondary-link svg {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+}
+/* When body is locked */
+body.sm-no-scroll {
+  overflow: hidden;
+}
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+.sm-header__desktop-only {
+  display: flex !important;
+}
+.sm-header__mobile-only {
+  display: none !important;
+}
+/* ---- Search Bar Overlay ---- */
+.sm-header__search-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  background: #fff;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
+.sm-header__search-bar.is-active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+.sm-header__search-bar-inner {
+  max-width: 1750px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  height: var(--sm-header-height);
+  flex-shrink: 0;
+  border-bottom: 1px solid #eee;
+}
+.sm-header__search-form {
+  flex: 1;
+}
+.sm-header__search-field-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #000;
+}
+.sm-header__search-icon {
+  position: absolute;
+  left: 0;
+  color: #000;
+}
+.sm-header__search-input {
+  width: 100%;
+  height: 60px;
+  padding: 0 0 0 40px;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  outline: none;
+}
+.sm-header__search-input::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.sm-header__search-input::placeholder {
+  color: #999;
+  opacity: 1;
+}
+.sm-header__search-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  padding: 10px;
+  transition: opacity 0.2s;
+}
+.sm-header__search-close:hover {
+  opacity: 0.6;
+}
+/* ===========================================
+   LIVE SEARCH RESULTS
+   =========================================== */
+.sm-search-results {
+  max-width: 1750px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  max-height: calc(100vh - var(--sm-header-height));
+  overflow-y: auto;
+}
+/* Loading state */
+.sm-search-results__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 0;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+.sm-search-results__spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e0e0e0;
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: sm-spin 0.6s linear infinite;
+}
+@keyframes sm-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Empty state */
+.sm-search-results__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  color: #999;
+  gap: 12px;
+}
+.sm-search-results__empty svg {
+  opacity: 0.3;
+}
+.sm-search-results__empty p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+/* Results grid */
+.sm-search-results__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 24px 0;
+}
+.sm-search-results__item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background: #fafafa;
+}
+.sm-search-results__item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+.sm-search-results__thumb {
+  position: relative;
+  width: 100%;
+  padding-top: 120%;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+.sm-search-results__thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s;
+}
+.sm-search-results__item:hover .sm-search-results__thumb img {
+  transform: scale(1.05);
+}
+.sm-search-results__info {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.sm-search-results__name {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: #000;
+}
+.sm-search-results__price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+}
+.sm-search-results__price del {
+  color: #999;
+  font-weight: 400;
+  margin-right: 6px;
+}
+.sm-search-results__price ins {
+  text-decoration: none;
+  color: #c0392b;
+  font-weight: 700;
+}
+/* View All link */
+.sm-search-results__view-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0 24px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: opacity 0.2s;
+  border-top: 1px solid #eee;
+}
+.sm-search-results__view-all:hover {
+  opacity: 0.6;
+}
+@media (max-width: 1024px) {
+  .sm-header__search-bar-inner {
+    padding: 0 15px;
+    gap: 15px;
+  }
+  .sm-header__search-input {
+    font-size: 18px;
+    height: 50px;
+  }
+  .sm-mega {
+    display: none !important;
+  }
+  .sm-header__desktop-only {
+    display: none !important;
+  }
+  /* Bắt buộc hiển thị trên mobile */
+  .sm-header__mobile-only {
+    display: flex !important;
+  }
+  .sm-header__inner {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+  /* Left: Search button */
+  .sm-header__mobile-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+  /* Center: Logo */
+  .sm-header__logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  .sm-header__logo-img--desktop,
+  .sm-header__logo-text--desktop {
+    display: none !important;
+  }
+  .sm-header__logo-img--mobile {
+    width: 100px !important;
+    height: auto;
+    display: block;
+  }
+  /* Right: Utilities (Hamburger + Cart) */
+  .sm-header__utilities {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+  }
+  .sm-header__nav {
+    display: none;
+  }
+  /* Hamburger position */
+  .sm-header__hamburger {
+    display: flex;
+    align-items: center;
+    order: -1; /* Move hamburger to the left of the cart icon */
+  }
+  /* Search results responsive */
+  .sm-search-results {
+    padding: 0 15px;
+  }
+  .sm-search-results__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .sm-search-results__info {
+    padding: 10px 12px;
+  }
+  .sm-search-results__name {
+    font-size: 12px;
+  }
+  .sm-search-results__price {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/
+/*# sourceURL=http://localhost/wordpress/wp-content/plugins/my-blocks/build/sm-header/style-index.css */
+</style>
+<style id='wp-block-post-title-inline-css'>
+.wp-block-post-title{box-sizing:border-box;word-break:break-word}.wp-block-post-title :where(a){display:inline-block;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
+/*# sourceURL=http://localhost/wordpress/wp-includes/blocks/post-title/style.min.css */
+</style>
+<style id='wp-block-post-content-inline-css'>
+.wp-block-post-content{display:flow-root}
+/*# sourceURL=http://localhost/wordpress/wp-includes/blocks/post-content/style.min.css */
+</style>
+<style id='wp-block-group-inline-css'>
+.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
+/*# sourceURL=http://localhost/wordpress/wp-includes/blocks/group/style.min.css */
+</style>
+<style id='sm-footer-style-inline-css'>
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/sm-footer/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+.sm-footer {
+  font-family: Arial, sans-serif;
+  padding: 60px 0 20px;
+  background-color: var(--sm-bg-color, #f4f4f4);
+  color: var(--sm-text-color, #222);
+  overflow-x: hidden;
+}
+
+.sm-grid-wrap {
+  max-width: 1750px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.sm-footer-inner {
+  display: grid;
+  grid-template-columns: 35% 20% 20% 25%;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* --- Column 1: Newsletter --- */
+
+.sm-footer-col-main {
+  padding-right: 40px;
+}
+
+.sm-footer-newsletter-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 5px;
+}
+
+.sm-footer-newsletter-subtitle {
+  font-size: 16px;
+  margin: 0 0 20px;
+  color: #555;
+}
+
+.sm-footer-newsletter-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.sm-footer-newsletter-form input[type=email] {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.sm-footer-newsletter-form button {
+  padding: 12px 24px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.sm-footer-newsletter-form button:hover {
+  border-color: #222;
+}
+
+.sm-footer-social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.sm-footer-social-icons a, .sm-footer-social-icons span {
+  color: #222;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.sm-footer-social-icons a:hover, .sm-footer-social-icons span:hover {
+  opacity: 1;
+}
+
+.sm-footer-store-count {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.sm-footer-store-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  font-size: 13px;
+  background: #fff;
+  transition: 0.3s;
+  text-align: center;
+  min-width: 200px;
+}
+
+.sm-footer-store-btn:hover {
+  border-color: #222;
+}
+
+/* --- Columns 2, 3, 4: Links --- */
+
+.sm-footer-col-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.sm-footer-list p {
+  margin: 0 0 15px;
+  font-size: 13px;
+  color: #222;
+}
+
+.sm-footer-list p a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sm-footer-list p a:hover {
+  text-decoration: underline;
+}
+
+/* --- Bottom Bar --- */
+
+.sm-footer-bottom {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.sm-footer-bottom-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.sm-footer-payments {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.sm-footer-payments .sm-payment-icon {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0056b3; /* Demo color for logos */
+}
+
+.sm-footer-secure {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+/* Repsonsive */
+
+@media (max-width: 991px) {
+  .sm-footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sm-footer-col-main {
+    grid-column: 1/-1;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .sm-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .sm-footer-newsletter-form {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/
+/*# sourceURL=http://localhost/wordpress/wp-content/plugins/my-blocks/build/sm-footer/style-index.css */
+</style>
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id='wp-block-library-inline-css'>
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<link rel='stylesheet' id='woocommerce-blocktheme-css' href='http://localhost/wordpress/wp-content/plugins/woocommerce/assets/css/woocommerce-blocktheme.css?ver=10.5.3' media='all' />
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: #1a1a2e;--wp--preset--color--secondary: #667eea;--wp--preset--color--background: #ffffff;--wp--preset--color--text: #333333;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-family--inter: Inter, sans-serif;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 800px;--wp--style--global--wide-size: 1200px; }:where(body) { margin: 0; }.wp-site-blocks { padding-top: var(--wp--style--root--padding-top); padding-bottom: var(--wp--style--root--padding-bottom); }.has-global-padding { padding-right: var(--wp--style--root--padding-right); padding-left: var(--wp--style--root--padding-left); }.has-global-padding > .alignfull { margin-right: calc(var(--wp--style--root--padding-right) * -1); margin-left: calc(var(--wp--style--root--padding-left) * -1); }.has-global-padding :where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) { padding-right: 0; padding-left: 0; }.has-global-padding :where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) > .alignfull { margin-left: 0; margin-right: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 24px; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: 24px; }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 24px;}:root :where(.is-layout-grid){gap: 24px;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{background-color: var(--wp--preset--color--background);color: var(--wp--preset--color--text);font-family: var(--wp--preset--font-family--inter);--wp--style--root--padding-top: 0px;--wp--style--root--padding-right: 0px;--wp--style--root--padding-bottom: 0px;--wp--style--root--padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-color{color: var(--wp--preset--color--primary) !important;}.has-secondary-color{color: var(--wp--preset--color--secondary) !important;}.has-background-color{color: var(--wp--preset--color--background) !important;}.has-text-color{color: var(--wp--preset--color--text) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-background-color{background-color: var(--wp--preset--color--primary) !important;}.has-secondary-background-color{background-color: var(--wp--preset--color--secondary) !important;}.has-background-background-color{background-color: var(--wp--preset--color--background) !important;}.has-text-background-color{background-color: var(--wp--preset--color--text) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-border-color{border-color: var(--wp--preset--color--primary) !important;}.has-secondary-border-color{border-color: var(--wp--preset--color--secondary) !important;}.has-background-border-color{border-color: var(--wp--preset--color--background) !important;}.has-text-border-color{border-color: var(--wp--preset--color--text) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-inter-font-family{font-family: var(--wp--preset--font-family--inter) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<style id='wp-block-template-skip-link-inline-css'>
+
+		.skip-link.screen-reader-text {
+			border: 0;
+			clip-path: inset(50%);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute !important;
+			width: 1px;
+			word-wrap: normal !important;
+		}
+
+		.skip-link.screen-reader-text:focus {
+			background-color: #eee;
+			clip-path: none;
+			color: #444;
+			display: block;
+			font-size: 1em;
+			height: auto;
+			left: 5px;
+			line-height: normal;
+			padding: 15px 23px 14px;
+			text-decoration: none;
+			top: 5px;
+			width: auto;
+			z-index: 100000;
+		}
+/*# sourceURL=wp-block-template-skip-link-inline-css */
+</style>
+<link rel='stylesheet' id='select2-css' href='http://localhost/wordpress/wp-content/plugins/woocommerce/assets/css/select2.css?ver=10.5.3' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css' href='http://localhost/wordpress/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=10.5.3' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='http://localhost/wordpress/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=10.5.3' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css' href='http://localhost/wordpress/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=10.5.3' media='all' />
+<style id='woocommerce-inline-inline-css'>
+.woocommerce form .form-row .required { visibility: visible; }
+/*# sourceURL=woocommerce-inline-inline-css */
+</style>
+<link rel='stylesheet' id='sm-storefront-style-css' href='http://localhost/wordpress/wp-content/themes/sm-storefront/style.css?ver=0.1.0' media='all' />
+<link rel='stylesheet' id='sm-my-account-style-css' href='http://localhost/wordpress/wp-content/themes/sm-storefront/assets/css/sm-my-account.css?ver=1.0.0' media='all' />
+<script src="http://localhost/wordpress/wp-content/plugins/my-blocks/build/sm-header/view.js?ver=22ad1d22a2ac9198840a" id="sm-header-view-script-js" defer data-wp-strategy="defer"></script>
+<script src="http://localhost/wordpress/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="http://localhost/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script src="http://localhost/wordpress/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.10.5.3" id="wc-jquery-blockui-js" defer data-wp-strategy="defer"></script>
+<script id="wc-add-to-cart-js-extra">
+var wc_add_to_cart_params = {"ajax_url":"/wordpress/wp-admin/admin-ajax.php","wc_ajax_url":"/wordpress/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"http://localhost/wordpress/cart/","is_cart":"","cart_redirect_after_add":"no"};
+//# sourceURL=wc-add-to-cart-js-extra
+</script>
+<script src="http://localhost/wordpress/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=10.5.3" id="wc-add-to-cart-js" defer data-wp-strategy="defer"></script>
+<script src="http://localhost/wordpress/wp-content/plugins/woocommerce/assets/js/selectWoo/selectWoo.full.min.js?ver=1.0.9-wc.10.5.3" id="selectWoo-js" defer data-wp-strategy="defer"></script>
+<script src="http://localhost/wordpress/wp-content/plugins/woocommerce/assets/js/frontend/account-i18n.min.js?ver=10.5.3" id="wc-account-i18n-js" defer data-wp-strategy="defer"></script>
+<script src="http://localhost/wordpress/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.10.5.3" id="wc-js-cookie-js" defer data-wp-strategy="defer"></script>
+<script id="woocommerce-js-extra">
+var woocommerce_params = {"ajax_url":"/wordpress/wp-admin/admin-ajax.php","wc_ajax_url":"/wordpress/?wc-ajax=%%endpoint%%","i18n_password_show":"Show password","i18n_password_hide":"Hide password"};
+//# sourceURL=woocommerce-js-extra
+</script>
+<script src="http://localhost/wordpress/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=10.5.3" id="woocommerce-js" defer data-wp-strategy="defer"></script>
+<script id="WCPAY_ASSETS-js-extra">
+var wcpayAssets = {"url":"http://localhost/wordpress/wp-content/plugins/woocommerce-payments/dist/"};
+//# sourceURL=WCPAY_ASSETS-js-extra
+</script>
+<link rel="https://api.w.org/" href="http://localhost/wordpress/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="http://localhost/wordpress/wp-json/wp/v2/pages/10" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost/wordpress/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9.1" />
+<meta name="generator" content="WooCommerce 10.5.3" />
+<link rel="canonical" href="http://localhost/wordpress/my-account/" />
+<link rel='shortlink' href='http://localhost/wordpress/?p=10' />
+	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	</head>
+
+<body class="wp-singular page-template-default page page-id-10 wp-embed-responsive wp-theme-sm-storefront theme-sm-storefront woocommerce-account woocommerce-page woocommerce-uses-block-theme woocommerce-block-theme-has-button-styles woocommerce-no-js">
+
+<div class="wp-site-blocks"><header class="wp-block-template-part"><div style="--sm-header-bg:#ffffff;--sm-header-text:#000000;" class="sm-header-wrapper wp-block-sm-header sm-header-wrapper wp-block-sm-header" data-sticky="true">
+    <!-- ============ HEADER BAR ============ -->
+    <header class="sm-header" id="sm-header">
+        <div class="sm-header__inner">
+
+                            <!-- Mobile left: Search -->
+                <div class="sm-header__mobile-left sm-header__mobile-only">
+                    <button type="button" class="sm-header__search-trigger" aria-label="Search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+                    </button>
+                </div>
+            
+            <!-- Logo LEFT -->
+            <div class="sm-header__logo">
+                <a href="http://localhost/wordpress/" class="sm-header__logo-link">
+                                            <img decoding="async" src="http://localhost/wordpress/wp-content/uploads/2026/03/lacoste.svg" alt="LACOSTE" class="sm-header__logo-img sm-header__logo-img--desktop" style="width: 160px" />
+                        <img decoding="async" src="http://localhost/wordpress/wp-content/uploads/2026/03/lacoste.svg" alt="LACOSTE" class="sm-header__logo-img sm-header__logo-img--mobile sm-header__mobile-only" style="width: 100px" />
+                                    </a>
+            </div>
+
+            <!-- Nav CENTER -->
+            <nav class="sm-header__nav" id="sm-nav" aria-label="Main navigation">
+                <ul class="sm-header__nav-list">
+                                            <li class="sm-header__nav-item has-submenu" data-menu-index="0">
+                                                            <button type="button" class="sm-header__nav-link" aria-expanded="false" aria-controls="sm-mega-0">
+                                    <span>Phụ Kiện</span>
+                                    <svg class="sm-icon-chevron" width="8" height="5" viewBox="0 0 8 5" fill="none"><path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.5"/></svg>
+                                </button>
+                                                    </li>
+                                            <li class="sm-header__nav-item has-submenu" data-menu-index="1">
+                                                            <button type="button" class="sm-header__nav-link" aria-expanded="false" aria-controls="sm-mega-1">
+                                    <span>Thời Trang Nam</span>
+                                    <svg class="sm-icon-chevron" width="8" height="5" viewBox="0 0 8 5" fill="none"><path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.5"/></svg>
+                                </button>
+                                                    </li>
+                                            <li class="sm-header__nav-item has-submenu" data-menu-index="2">
+                                                            <button type="button" class="sm-header__nav-link" aria-expanded="false" aria-controls="sm-mega-2">
+                                    <span>Thời Trang Nữ</span>
+                                    <svg class="sm-icon-chevron" width="8" height="5" viewBox="0 0 8 5" fill="none"><path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.5"/></svg>
+                                </button>
+                                                    </li>
+                                        
+                                            <li class="sm-header__nav-item sm-header__nav-item--search sm-header__desktop-only">
+                            <button type="button" class="sm-header__nav-link sm-header__search-trigger" aria-label="Search">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+                            </button>
+                        </li>
+                                    </ul>
+            </nav>
+
+            <!-- Utilities RIGHT -->
+            <div class="sm-header__utilities">
+                                    <div class="sm-header__lang-switcher sm-header__desktop-only">
+                        <button type="button" class="sm-header__utility-text sm-header__lang-toggle" aria-expanded="false" aria-label="Change language">EN</button>
+                    </div>
+                                
+                                    <a href="#" class="sm-header__icon-btn sm-header__desktop-only" aria-label="Store locator">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+                    </a>
+                
+                                    <a href="http://localhost/wordpress/my-account/" class="sm-header__icon-btn sm-header__desktop-only" aria-label="Account">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+                    </a>
+                
+                                    <a href="http://localhost/wordpress/cart/" class="sm-header__icon-btn sm-header__cart-btn" aria-label="Cart">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 0 1-8 0" /></svg>
+                        <span class="sm-header__cart-count" data-cart-count="">
+                            0                        </span>
+                    </a>
+                
+                <button type="button" class="sm-header__hamburger sm-header__mobile-only" aria-label="Menu" id="sm-hamburger">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ============ SEARCH BAR OVERLAY ============ -->
+            <div class="sm-header__search-bar" id="sm-search-bar" aria-hidden="true">
+            <div class="sm-header__search-bar-inner">
+                <form role="search" method="get" class="sm-header__search-form" action="http://localhost/wordpress/">
+                    <div class="sm-header__search-field-wrap">
+                        <svg class="sm-header__search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+                        <input 
+                            type="search" 
+                            id="sm-header-search-input"
+                            class="sm-header__search-input" 
+                            placeholder="Tìm kiếm sản phẩm..." 
+                            value="" 
+                            name="s" 
+                            autocomplete="off"
+                        />
+                        <input type="hidden" name="post_type" value="product" />
+                    </div>
+                </form>
+                <button type="button" class="sm-header__search-close" id="sm-search-close" aria-label="Close search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                </button>
+            </div>
+
+            <!-- Live Search Results -->
+            <div class="sm-search-results" id="sm-search-results" aria-live="polite">
+                <div class="sm-search-results__loading" id="sm-search-loading" style="display:none;">
+                    <div class="sm-search-results__spinner"></div>
+                    <span>Đang tìm kiếm&#8230;</span>
+                </div>
+                <div class="sm-search-results__list" id="sm-search-results-list"></div>
+                <div class="sm-search-results__empty" id="sm-search-empty" style="display:none;">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+                    <p>Không tìm thấy sản phẩm nào.</p>
+                </div>
+                <a href="#" class="sm-search-results__view-all" id="sm-search-view-all" style="display:none;">
+                    Xem tất cả kết quả →
+                </a>
+            </div>
+        </div>
+    
+    <!-- ============ MEGA MENU PANELS (Desktop) ============ -->
+                        <div class="sm-mega" id="sm-mega-0" aria-hidden="true" data-mega-index="0">
+                <div class="sm-mega__overlay" data-mega-close=""></div>
+                <div class="sm-mega__panel">
+                    <button type="button" class="sm-mega__close" data-mega-close="" aria-label="Close menu">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                    </button>
+                    <div class="sm-mega__body">
+                        <div class="sm-mega__columns">
+                            <!-- Level 1 Items (Columns) -->
+                                                            <div class="sm-mega__col">
+                                                                            <h3 class="sm-mega__col-title">Túi Xách</h3>
+                                        <ul class="sm-mega__list">
+                                            <!-- Level 2 Items (Links) -->
+                                                                                            <li><a href="http://localhost/wordpress/product-category/phu-kien/tui-xach/tui-tote/" class="sm-mega__link">Túi Tote</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/phu-kien/tui-xach/tui-xach-nu/" class="sm-mega__link">Túi Xách Nữ</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/phu-kien/tui-xach/balo-tui-nam/" class="sm-mega__link">Balo &amp; Túi Nam</a></li>
+                                                                                    </ul>
+                                                                    </div>
+                                                            <div class="sm-mega__col">
+                                                                            <h3 class="sm-mega__col-title">Giày Dép</h3>
+                                        <ul class="sm-mega__list">
+                                            <!-- Level 2 Items (Links) -->
+                                                                                            <li><a href="http://localhost/wordpress/product-category/phu-kien/giay-dep/dep-sandal/" class="sm-mega__link">Dép &amp; Sandal</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/phu-kien/giay-dep/giay-cao-got/" class="sm-mega__link">Giày Cao Gót</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/phu-kien/giay-dep/giay-sneaker/" class="sm-mega__link">Giày Sneaker</a></li>
+                                                                                    </ul>
+                                                                    </div>
+                                                            <div class="sm-mega__col">
+                                                                            <h3 class="sm-mega__col-title">Phụ Kiện Khác</h3>
+                                        <ul class="sm-mega__list">
+                                            <!-- Level 2 Items (Links) -->
+                                                                                            <li><a href="http://localhost/wordpress/product-category/phu-kien/phu-kien-khac/vi-phu-kien-da/" class="sm-mega__link">Ví &amp; Phụ Kiện Da</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/phu-kien/phu-kien-khac/that-lung/" class="sm-mega__link">Thắt Lưng</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/phu-kien/phu-kien-khac/mu-non/" class="sm-mega__link">Mũ &amp; Nón</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/phu-kien/phu-kien-khac/kinh-mat/" class="sm-mega__link">Kính Mắt</a></li>
+                                                                                    </ul>
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                <div class="sm-mega" id="sm-mega-1" aria-hidden="true" data-mega-index="1">
+                <div class="sm-mega__overlay" data-mega-close=""></div>
+                <div class="sm-mega__panel">
+                    <button type="button" class="sm-mega__close" data-mega-close="" aria-label="Close menu">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                    </button>
+                    <div class="sm-mega__body">
+                        <div class="sm-mega__columns">
+                            <!-- Level 1 Items (Columns) -->
+                                                            <div class="sm-mega__col">
+                                                                            <h3 class="sm-mega__col-title">Áo Nam</h3>
+                                        <ul class="sm-mega__list">
+                                            <!-- Level 2 Items (Links) -->
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nam/ao-nam/ao-khoac-hoodie-nam/" class="sm-mega__link">Áo Khoác &amp; Hoodie Nam</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nam/ao-nam/ao-phong-nam/" class="sm-mega__link">Áo Phông Nam</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nam/ao-nam/ao-so-mi-nam/" class="sm-mega__link">Áo Sơ Mi Nam</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nam/ao-nam/ao-polo-nam/" class="sm-mega__link">Áo Polo Nam</a></li>
+                                                                                    </ul>
+                                                                    </div>
+                                                            <div class="sm-mega__col">
+                                                                            <h3 class="sm-mega__col-title">Quần Nam</h3>
+                                        <ul class="sm-mega__list">
+                                            <!-- Level 2 Items (Links) -->
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nam/quan-nam/quan-short-nam/" class="sm-mega__link">Quần Short Nam</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nam/quan-nam/quan-jeans-nam/" class="sm-mega__link">Quần Jeans Nam</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nam/quan-nam/quan-tay-nam/" class="sm-mega__link">Quần Tây Nam</a></li>
+                                                                                    </ul>
+                                                                    </div>
+                                                            <div class="sm-mega__col">
+                                                                            <h3 class="sm-mega__col-title">Vest &amp; Suit Nam</h3>
+                                        <ul class="sm-mega__list">
+                                            <!-- Level 2 Items (Links) -->
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nam/vest-suit-nam/ao-blazer-nam/" class="sm-mega__link">Áo Blazer Nam</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nam/vest-suit-nam/ao-vest-nam/" class="sm-mega__link">Áo Vest Nam</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nam/vest-suit-nam/bo-suit-nam/" class="sm-mega__link">Bộ Suit Nam</a></li>
+                                                                                    </ul>
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                <div class="sm-mega" id="sm-mega-2" aria-hidden="true" data-mega-index="2">
+                <div class="sm-mega__overlay" data-mega-close=""></div>
+                <div class="sm-mega__panel">
+                    <button type="button" class="sm-mega__close" data-mega-close="" aria-label="Close menu">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                    </button>
+                    <div class="sm-mega__body">
+                        <div class="sm-mega__columns">
+                            <!-- Level 1 Items (Columns) -->
+                                                            <div class="sm-mega__col">
+                                                                            <h3 class="sm-mega__col-title">Áo Nữ</h3>
+                                        <ul class="sm-mega__list">
+                                            <!-- Level 2 Items (Links) -->
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nu/ao-nu/ao-khoac-nu/" class="sm-mega__link">Áo Khoác Nữ</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nu/ao-nu/ao-len-hoodie-nu/" class="sm-mega__link">Áo Len &amp; Hoodie Nữ</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nu/ao-nu/ao-phong-nu/" class="sm-mega__link">Áo Phông Nữ</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nu/ao-nu/ao-so-mi-nu/" class="sm-mega__link">Áo Sơ Mi Nữ</a></li>
+                                                                                    </ul>
+                                                                    </div>
+                                                            <div class="sm-mega__col">
+                                                                            <h3 class="sm-mega__col-title">Quần Nữ</h3>
+                                        <ul class="sm-mega__list">
+                                            <!-- Level 2 Items (Links) -->
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nu/quan-nu/quan-jeans-nu/" class="sm-mega__link">Quần Jeans Nữ</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nu/quan-nu/quan-short-nu/" class="sm-mega__link">Quần Short Nữ</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nu/quan-nu/quan-tay-nu/" class="sm-mega__link">Quần Tây Nữ</a></li>
+                                                                                    </ul>
+                                                                    </div>
+                                                            <div class="sm-mega__col">
+                                                                            <h3 class="sm-mega__col-title">Váy &amp; Đầm</h3>
+                                        <ul class="sm-mega__list">
+                                            <!-- Level 2 Items (Links) -->
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nu/vay-dam/dam-dai/" class="sm-mega__link">Đầm Dài</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nu/vay-dam/dam-du-tiec/" class="sm-mega__link">Đầm Dự Tiệc</a></li>
+                                                                                            <li><a href="http://localhost/wordpress/product-category/thoi-trang-nu/vay-dam/vay-ngan/" class="sm-mega__link">Váy Ngắn</a></li>
+                                                                                    </ul>
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+            
+    <!-- ============ MOBILE DRAWER ============ -->
+    <div class="sm-mobile-drawer" id="sm-mobile-drawer" aria-hidden="true">
+        <div class="sm-mobile-drawer__overlay" data-drawer-close=""></div>
+        <div class="sm-mobile-drawer__panels">
+            
+            <!-- Main panel (Level 0) -->
+            <div class="sm-mobile-drawer__panel is-active" data-panel-id="main">
+                <div class="sm-mobile-drawer__header">
+                    <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close menu">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                    </button>
+                </div>
+                <nav class="sm-mobile-drawer__nav">
+                    <ul class="sm-mobile-drawer__list">
+                                                    <li class="sm-mobile-drawer__item">
+                                                                    <button type="button" class="sm-mobile-drawer__link" data-drill-trigger="panel-1">
+                                        <span>Phụ Kiện</span>
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                    </button>
+                                                            </li>
+                                                    <li class="sm-mobile-drawer__item">
+                                                                    <button type="button" class="sm-mobile-drawer__link" data-drill-trigger="panel-2">
+                                        <span>Thời Trang Nam</span>
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                    </button>
+                                                            </li>
+                                                    <li class="sm-mobile-drawer__item">
+                                                                    <button type="button" class="sm-mobile-drawer__link" data-drill-trigger="panel-3">
+                                        <span>Thời Trang Nữ</span>
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                    </button>
+                                                            </li>
+                                            </ul>
+                    
+                    <div class="sm-mobile-drawer__secondary">
+                        <ul class="sm-mobile-drawer__secondary-list">
+                                                            <li>
+                                    <a href="http://localhost/wordpress/my-account/" class="sm-mobile-drawer__secondary-link">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+                                        <span>My Account</span>
+                                    </a>
+                                </li>
+                                                                                        <li>
+                                    <a href="#" class="sm-mobile-drawer__secondary-link">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+                                        <span>Find a boutique</span>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Sub panels (Level 1) -->
+                                                <div class="sm-mobile-drawer__panel" data-panel-id="panel-1" data-parent-panel="main">
+                        <div class="sm-mobile-drawer__header">
+                            <button type="button" class="sm-mobile-drawer__back" data-drill-back="" aria-label="Back">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            </button>
+                            <div class="sm-mobile-drawer__breadcrumbs">
+                                <span>Home</span> / <span>Phụ Kiện</span>
+                            </div>
+                            <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                            </button>
+                        </div>
+                        <div class="sm-mobile-drawer__content">
+                            <h2 class="sm-mobile-drawer__panel-title">Phụ Kiện</h2>
+                            <ul class="sm-mobile-drawer__sub-list">
+                                                                    <li>
+                                                                                    <button type="button" class="sm-mobile-drawer__sub-link" data-drill-trigger="subpanel-1-1">
+                                                <span>Túi Xách</span>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                            </button>
+                                                                            </li>
+                                                                    <li>
+                                                                                    <button type="button" class="sm-mobile-drawer__sub-link" data-drill-trigger="subpanel-1-2">
+                                                <span>Giày Dép</span>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                            </button>
+                                                                            </li>
+                                                                    <li>
+                                                                                    <button type="button" class="sm-mobile-drawer__sub-link" data-drill-trigger="subpanel-1-3">
+                                                <span>Phụ Kiện Khác</span>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                            </button>
+                                                                            </li>
+                                                            </ul>
+                        </div>
+                    </div>
+                                                                <div class="sm-mobile-drawer__panel" data-panel-id="panel-2" data-parent-panel="main">
+                        <div class="sm-mobile-drawer__header">
+                            <button type="button" class="sm-mobile-drawer__back" data-drill-back="" aria-label="Back">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            </button>
+                            <div class="sm-mobile-drawer__breadcrumbs">
+                                <span>Home</span> / <span>Thời Trang Nam</span>
+                            </div>
+                            <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                            </button>
+                        </div>
+                        <div class="sm-mobile-drawer__content">
+                            <h2 class="sm-mobile-drawer__panel-title">Thời Trang Nam</h2>
+                            <ul class="sm-mobile-drawer__sub-list">
+                                                                    <li>
+                                                                                    <button type="button" class="sm-mobile-drawer__sub-link" data-drill-trigger="subpanel-2-1">
+                                                <span>Áo Nam</span>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                            </button>
+                                                                            </li>
+                                                                    <li>
+                                                                                    <button type="button" class="sm-mobile-drawer__sub-link" data-drill-trigger="subpanel-2-2">
+                                                <span>Quần Nam</span>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                            </button>
+                                                                            </li>
+                                                                    <li>
+                                                                                    <button type="button" class="sm-mobile-drawer__sub-link" data-drill-trigger="subpanel-2-3">
+                                                <span>Vest &amp; Suit Nam</span>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                            </button>
+                                                                            </li>
+                                                            </ul>
+                        </div>
+                    </div>
+                                                                <div class="sm-mobile-drawer__panel" data-panel-id="panel-3" data-parent-panel="main">
+                        <div class="sm-mobile-drawer__header">
+                            <button type="button" class="sm-mobile-drawer__back" data-drill-back="" aria-label="Back">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            </button>
+                            <div class="sm-mobile-drawer__breadcrumbs">
+                                <span>Home</span> / <span>Thời Trang Nữ</span>
+                            </div>
+                            <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                            </button>
+                        </div>
+                        <div class="sm-mobile-drawer__content">
+                            <h2 class="sm-mobile-drawer__panel-title">Thời Trang Nữ</h2>
+                            <ul class="sm-mobile-drawer__sub-list">
+                                                                    <li>
+                                                                                    <button type="button" class="sm-mobile-drawer__sub-link" data-drill-trigger="subpanel-3-1">
+                                                <span>Áo Nữ</span>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                            </button>
+                                                                            </li>
+                                                                    <li>
+                                                                                    <button type="button" class="sm-mobile-drawer__sub-link" data-drill-trigger="subpanel-3-2">
+                                                <span>Quần Nữ</span>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                            </button>
+                                                                            </li>
+                                                                    <li>
+                                                                                    <button type="button" class="sm-mobile-drawer__sub-link" data-drill-trigger="subpanel-3-3">
+                                                <span>Váy &amp; Đầm</span>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                            </button>
+                                                                            </li>
+                                                            </ul>
+                        </div>
+                    </div>
+                            
+            <!-- Sub-sub panels (Level 2) -->
+                                                                                                    <div class="sm-mobile-drawer__panel" data-panel-id="subpanel-1-1" data-parent-panel="panel-1">
+                                <div class="sm-mobile-drawer__header">
+                                    <button type="button" class="sm-mobile-drawer__back" data-drill-back="" aria-label="Back">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                    </button>
+                                    <div class="sm-mobile-drawer__breadcrumbs">
+                                        <span>Home</span> / <span>Phụ Kiện</span> / <span>Túi Xách</span>
+                                    </div>
+                                    <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                                    </button>
+                                </div>
+                                <div class="sm-mobile-drawer__content">
+                                    <h2 class="sm-mobile-drawer__panel-title">Túi Xách</h2>
+                                    <ul class="sm-mobile-drawer__sub-list">
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/phu-kien/tui-xach/tui-tote/" class="sm-mobile-drawer__sub-link"><span>Túi Tote</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/phu-kien/tui-xach/tui-xach-nu/" class="sm-mobile-drawer__sub-link"><span>Túi Xách Nữ</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/phu-kien/tui-xach/balo-tui-nam/" class="sm-mobile-drawer__sub-link"><span>Balo &amp; Túi Nam</span></a>
+                                            </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                                                                                                <div class="sm-mobile-drawer__panel" data-panel-id="subpanel-1-2" data-parent-panel="panel-1">
+                                <div class="sm-mobile-drawer__header">
+                                    <button type="button" class="sm-mobile-drawer__back" data-drill-back="" aria-label="Back">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                    </button>
+                                    <div class="sm-mobile-drawer__breadcrumbs">
+                                        <span>Home</span> / <span>Phụ Kiện</span> / <span>Giày Dép</span>
+                                    </div>
+                                    <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                                    </button>
+                                </div>
+                                <div class="sm-mobile-drawer__content">
+                                    <h2 class="sm-mobile-drawer__panel-title">Giày Dép</h2>
+                                    <ul class="sm-mobile-drawer__sub-list">
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/phu-kien/giay-dep/dep-sandal/" class="sm-mobile-drawer__sub-link"><span>Dép &amp; Sandal</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/phu-kien/giay-dep/giay-cao-got/" class="sm-mobile-drawer__sub-link"><span>Giày Cao Gót</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/phu-kien/giay-dep/giay-sneaker/" class="sm-mobile-drawer__sub-link"><span>Giày Sneaker</span></a>
+                                            </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                                                                                                <div class="sm-mobile-drawer__panel" data-panel-id="subpanel-1-3" data-parent-panel="panel-1">
+                                <div class="sm-mobile-drawer__header">
+                                    <button type="button" class="sm-mobile-drawer__back" data-drill-back="" aria-label="Back">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                    </button>
+                                    <div class="sm-mobile-drawer__breadcrumbs">
+                                        <span>Home</span> / <span>Phụ Kiện</span> / <span>Phụ Kiện Khác</span>
+                                    </div>
+                                    <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                                    </button>
+                                </div>
+                                <div class="sm-mobile-drawer__content">
+                                    <h2 class="sm-mobile-drawer__panel-title">Phụ Kiện Khác</h2>
+                                    <ul class="sm-mobile-drawer__sub-list">
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/phu-kien/phu-kien-khac/vi-phu-kien-da/" class="sm-mobile-drawer__sub-link"><span>Ví &amp; Phụ Kiện Da</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/phu-kien/phu-kien-khac/that-lung/" class="sm-mobile-drawer__sub-link"><span>Thắt Lưng</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/phu-kien/phu-kien-khac/mu-non/" class="sm-mobile-drawer__sub-link"><span>Mũ &amp; Nón</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/phu-kien/phu-kien-khac/kinh-mat/" class="sm-mobile-drawer__sub-link"><span>Kính Mắt</span></a>
+                                            </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                                                                                                                                                                <div class="sm-mobile-drawer__panel" data-panel-id="subpanel-2-1" data-parent-panel="panel-2">
+                                <div class="sm-mobile-drawer__header">
+                                    <button type="button" class="sm-mobile-drawer__back" data-drill-back="" aria-label="Back">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                    </button>
+                                    <div class="sm-mobile-drawer__breadcrumbs">
+                                        <span>Home</span> / <span>Thời Trang Nam</span> / <span>Áo Nam</span>
+                                    </div>
+                                    <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                                    </button>
+                                </div>
+                                <div class="sm-mobile-drawer__content">
+                                    <h2 class="sm-mobile-drawer__panel-title">Áo Nam</h2>
+                                    <ul class="sm-mobile-drawer__sub-list">
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nam/ao-nam/ao-khoac-hoodie-nam/" class="sm-mobile-drawer__sub-link"><span>Áo Khoác &amp; Hoodie Nam</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nam/ao-nam/ao-phong-nam/" class="sm-mobile-drawer__sub-link"><span>Áo Phông Nam</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nam/ao-nam/ao-so-mi-nam/" class="sm-mobile-drawer__sub-link"><span>Áo Sơ Mi Nam</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nam/ao-nam/ao-polo-nam/" class="sm-mobile-drawer__sub-link"><span>Áo Polo Nam</span></a>
+                                            </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                                                                                                <div class="sm-mobile-drawer__panel" data-panel-id="subpanel-2-2" data-parent-panel="panel-2">
+                                <div class="sm-mobile-drawer__header">
+                                    <button type="button" class="sm-mobile-drawer__back" data-drill-back="" aria-label="Back">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                    </button>
+                                    <div class="sm-mobile-drawer__breadcrumbs">
+                                        <span>Home</span> / <span>Thời Trang Nam</span> / <span>Quần Nam</span>
+                                    </div>
+                                    <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                                    </button>
+                                </div>
+                                <div class="sm-mobile-drawer__content">
+                                    <h2 class="sm-mobile-drawer__panel-title">Quần Nam</h2>
+                                    <ul class="sm-mobile-drawer__sub-list">
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nam/quan-nam/quan-short-nam/" class="sm-mobile-drawer__sub-link"><span>Quần Short Nam</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nam/quan-nam/quan-jeans-nam/" class="sm-mobile-drawer__sub-link"><span>Quần Jeans Nam</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nam/quan-nam/quan-tay-nam/" class="sm-mobile-drawer__sub-link"><span>Quần Tây Nam</span></a>
+                                            </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                                                                                                <div class="sm-mobile-drawer__panel" data-panel-id="subpanel-2-3" data-parent-panel="panel-2">
+                                <div class="sm-mobile-drawer__header">
+                                    <button type="button" class="sm-mobile-drawer__back" data-drill-back="" aria-label="Back">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                    </button>
+                                    <div class="sm-mobile-drawer__breadcrumbs">
+                                        <span>Home</span> / <span>Thời Trang Nam</span> / <span>Vest &amp; Suit Nam</span>
+                                    </div>
+                                    <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                                    </button>
+                                </div>
+                                <div class="sm-mobile-drawer__content">
+                                    <h2 class="sm-mobile-drawer__panel-title">Vest &amp; Suit Nam</h2>
+                                    <ul class="sm-mobile-drawer__sub-list">
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nam/vest-suit-nam/ao-blazer-nam/" class="sm-mobile-drawer__sub-link"><span>Áo Blazer Nam</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nam/vest-suit-nam/ao-vest-nam/" class="sm-mobile-drawer__sub-link"><span>Áo Vest Nam</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nam/vest-suit-nam/bo-suit-nam/" class="sm-mobile-drawer__sub-link"><span>Bộ Suit Nam</span></a>
+                                            </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                                                                                                                                                                <div class="sm-mobile-drawer__panel" data-panel-id="subpanel-3-1" data-parent-panel="panel-3">
+                                <div class="sm-mobile-drawer__header">
+                                    <button type="button" class="sm-mobile-drawer__back" data-drill-back="" aria-label="Back">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                    </button>
+                                    <div class="sm-mobile-drawer__breadcrumbs">
+                                        <span>Home</span> / <span>Thời Trang Nữ</span> / <span>Áo Nữ</span>
+                                    </div>
+                                    <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                                    </button>
+                                </div>
+                                <div class="sm-mobile-drawer__content">
+                                    <h2 class="sm-mobile-drawer__panel-title">Áo Nữ</h2>
+                                    <ul class="sm-mobile-drawer__sub-list">
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nu/ao-nu/ao-khoac-nu/" class="sm-mobile-drawer__sub-link"><span>Áo Khoác Nữ</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nu/ao-nu/ao-len-hoodie-nu/" class="sm-mobile-drawer__sub-link"><span>Áo Len &amp; Hoodie Nữ</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nu/ao-nu/ao-phong-nu/" class="sm-mobile-drawer__sub-link"><span>Áo Phông Nữ</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nu/ao-nu/ao-so-mi-nu/" class="sm-mobile-drawer__sub-link"><span>Áo Sơ Mi Nữ</span></a>
+                                            </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                                                                                                <div class="sm-mobile-drawer__panel" data-panel-id="subpanel-3-2" data-parent-panel="panel-3">
+                                <div class="sm-mobile-drawer__header">
+                                    <button type="button" class="sm-mobile-drawer__back" data-drill-back="" aria-label="Back">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                    </button>
+                                    <div class="sm-mobile-drawer__breadcrumbs">
+                                        <span>Home</span> / <span>Thời Trang Nữ</span> / <span>Quần Nữ</span>
+                                    </div>
+                                    <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                                    </button>
+                                </div>
+                                <div class="sm-mobile-drawer__content">
+                                    <h2 class="sm-mobile-drawer__panel-title">Quần Nữ</h2>
+                                    <ul class="sm-mobile-drawer__sub-list">
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nu/quan-nu/quan-jeans-nu/" class="sm-mobile-drawer__sub-link"><span>Quần Jeans Nữ</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nu/quan-nu/quan-short-nu/" class="sm-mobile-drawer__sub-link"><span>Quần Short Nữ</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nu/quan-nu/quan-tay-nu/" class="sm-mobile-drawer__sub-link"><span>Quần Tây Nữ</span></a>
+                                            </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                                                                                                <div class="sm-mobile-drawer__panel" data-panel-id="subpanel-3-3" data-parent-panel="panel-3">
+                                <div class="sm-mobile-drawer__header">
+                                    <button type="button" class="sm-mobile-drawer__back" data-drill-back="" aria-label="Back">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                    </button>
+                                    <div class="sm-mobile-drawer__breadcrumbs">
+                                        <span>Home</span> / <span>Thời Trang Nữ</span> / <span>Váy &amp; Đầm</span>
+                                    </div>
+                                    <button type="button" class="sm-mobile-drawer__close" data-drawer-close="" aria-label="Close">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                                    </button>
+                                </div>
+                                <div class="sm-mobile-drawer__content">
+                                    <h2 class="sm-mobile-drawer__panel-title">Váy &amp; Đầm</h2>
+                                    <ul class="sm-mobile-drawer__sub-list">
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nu/vay-dam/dam-dai/" class="sm-mobile-drawer__sub-link"><span>Đầm Dài</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nu/vay-dam/dam-du-tiec/" class="sm-mobile-drawer__sub-link"><span>Đầm Dự Tiệc</span></a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="http://localhost/wordpress/product-category/thoi-trang-nu/vay-dam/vay-ngan/" class="sm-mobile-drawer__sub-link"><span>Váy Ngắn</span></a>
+                                            </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                                                                        
+        </div>
+    </div>
+
+        <script>
+        var smHeaderSearch = {"ajaxUrl":"http:\/\/localhost\/wordpress\/wp-admin\/admin-ajax.php","nonce":"3f35cb8546"};
+    </script>
+    </div>
+</header>
+
+
+<main class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:80px;padding-bottom:80px"><h1 style="text-transform:uppercase;letter-spacing:2px;" class="has-text-align-center wp-block-post-title">My account</h1>
+
+
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow" style="margin-top:40px"><div class="entry-content wp-block-post-content is-layout-flow wp-block-post-content-is-layout-flow"><div class="woocommerce"><div class="woocommerce-notices-wrapper"></div>
+
+		<h2>Login</h2>
+
+		<form class="woocommerce-form woocommerce-form-login login" method="post" novalidate>
+
+			
+			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+				<label for="username">Username or email address&nbsp;<span class="required" aria-hidden="true">*</span><span class="screen-reader-text">Required</span></label>
+				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="" required aria-required="true" />			</p>
+			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+				<label for="password">Password&nbsp;<span class="required" aria-hidden="true">*</span><span class="screen-reader-text">Required</span></label>
+				<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" required aria-required="true" />
+			</p>
+
+			
+			<p class="form-row">
+				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span>Remember me</span>
+				</label>
+				<input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="f159680d25" /><input type="hidden" name="_wp_http_referer" value="/wordpress/my-account/" />				<button type="submit" class="woocommerce-button button woocommerce-form-login__submit wp-element-button" name="login" value="Log in">Log in</button>
+			</p>
+			<p class="woocommerce-LostPassword lost_password">
+				<a href="http://localhost/wordpress/my-account/lost-password/">Lost your password?</a>
+			</p>
+
+			
+		</form>
+
+
+</div>
+</div></div>
+</main>
+
+
+<footer class="wp-block-template-part">
+<footer class="wp-block-sm-footer sm-footer" style="background-color:#f4f4f4;color:#222222"><div class="sm-footer-inner sm-grid-wrap"><div class="sm-footer-column sm-footer-col-main"><h4 class="sm-footer-newsletter-title">Sign up for new stories,</h4><p class="sm-footer-newsletter-subtitle">news and personal offers</p><form class="sm-footer-newsletter-form" action="#" method="POST"><input type="email" placeholder="Email" required/><button type="submit">Register</button></form><div class="sm-footer-social-icons"><a href="#">📷</a><a href="#">📘</a><a href="#">🐦</a><a href="#">📌</a><a href="#">📱</a><a href="#">▶️</a></div><div class="sm-footer-store-info"><p class="sm-footer-store-count">50 STORES IN INDONESIA</p><div class="sm-footer-store-btn-wrap"><a class="sm-footer-store-btn" href="#"><span>Find a boutique</span></a></div></div></div><div class="sm-footer-column"><h6 class="sm-footer-col-title">ABOUT LACOSTE</h6><div class="sm-footer-about sm-footer-list"><p><a href="#">The Lacoste Group</a></p><p><a href="#">Careers</a></p><p><a href="#">Brand protection</a></p></div></div><div class="sm-footer-column"><h6 class="sm-footer-col-title">CATEGORIES</h6><div class="sm-footer-categories sm-footer-list"><p><a href="#">Men&#8217;s collection</a></p><p><a href="#">Women&#8217;s collection</a></p><p><a href="#">Kids collection</a></p></div></div><div class="sm-footer-column"><h6 class="sm-footer-col-title">HELP &#038; CONTACTS</h6><div class="sm-footer-help sm-footer-list"><p><a href="#">Lacoste size chart</a></p><p><a href="#">FAQ</a></p><p><a href="#">By email</a></p></div></div></div><div class="sm-footer-bottom"><div class="sm-footer-bottom-inner"><div class="sm-footer-payments"><span class="sm-payment-icon">VISA</span><span class="sm-payment-icon">Mastercard</span><span class="sm-payment-icon">Virtual Account</span><span class="sm-payment-icon">Kredivo</span></div><p class="sm-footer-secure">🛡️ 100% secure payment</p></div></div></footer>
+</footer></div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/wordpress/*"},{"not":{"href_matches":["/wordpress/wp-*.php","/wordpress/wp-admin/*","/wordpress/wp-content/uploads/*","/wordpress/wp-content/*","/wordpress/wp-content/plugins/*","/wordpress/wp-content/themes/sm-storefront/*","/wordpress/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+	<script>
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<link rel='stylesheet' id='wc-blocks-style-css' href='http://localhost/wordpress/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css?ver=wc-10.5.3' media='all' />
+<script id="wp-block-template-skip-link-js-after">
+	( function() {
+		var skipLinkTarget = document.querySelector( 'main' ),
+			sibling,
+			skipLinkTargetID,
+			skipLink;
+
+		// Early exit if a skip-link target can't be located.
+		if ( ! skipLinkTarget ) {
+			return;
+		}
+
+		/*
+		 * Get the site wrapper.
+		 * The skip-link will be injected in the beginning of it.
+		 */
+		sibling = document.querySelector( '.wp-site-blocks' );
+
+		// Early exit if the root element was not found.
+		if ( ! sibling ) {
+			return;
+		}
+
+		// Get the skip-link target's ID, and generate one if it doesn't exist.
+		skipLinkTargetID = skipLinkTarget.id;
+		if ( ! skipLinkTargetID ) {
+			skipLinkTargetID = 'wp--skip-link--target';
+			skipLinkTarget.id = skipLinkTargetID;
+		}
+
+		// Create the skip link.
+		skipLink = document.createElement( 'a' );
+		skipLink.classList.add( 'skip-link', 'screen-reader-text' );
+		skipLink.id = 'wp-skip-link';
+		skipLink.href = '#' + skipLinkTargetID;
+		skipLink.innerText = 'Skip to content';
+
+		// Inject the skip link.
+		sibling.parentElement.insertBefore( skipLink, sibling );
+	}() );
+	
+//# sourceURL=wp-block-template-skip-link-js-after
+</script>
+<script src="http://localhost/wordpress/wp-content/themes/sm-storefront/assets/js/sm-my-account.js?ver=1.0.0" id="sm-my-account-js-js"></script>
+<script src="http://localhost/wordpress/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=10.5.3" id="sourcebuster-js-js"></script>
+<script id="wc-order-attribution-js-extra">
+var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"base64":false,"ajaxurl":"http://localhost/wordpress/wp-admin/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+//# sourceURL=wc-order-attribution-js-extra
+</script>
+<script src="http://localhost/wordpress/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=10.5.3" id="wc-order-attribution-js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"http://localhost/wordpress/wp-includes/js/wp-emoji-release.min.js?ver=6.9.1"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=http://localhost/wordpress/wp-includes/js/wp-emoji-loader.min.js
+</script>
+</body>
+</html>

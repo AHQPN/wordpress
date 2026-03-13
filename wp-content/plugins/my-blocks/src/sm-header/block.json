@@ -12,36 +12,7 @@
 		"logoUrl": { "type": "string", "default": "" },
 		"logoWidth": { "type": "number", "default": 160 },
 		"siteName": { "type": "string", "default": "LACOSTE" },
-		"menuItems": {
-			"type": "array",
-			"default": [
-				{
-					"label": "Men", "url": "#",
-					"children": [
-						{ "label": "Clothing", "url": "#", "children": [
-							{ "label": "Polo Shirts", "url": "#", "children": [] },
-							{ "label": "T-Shirts", "url": "#", "children": [] },
-							{ "label": "Jackets", "url": "#", "children": [] }
-						]},
-						{ "label": "Shoes", "url": "#", "children": [
-							{ "label": "Sneakers", "url": "#", "children": [] },
-							{ "label": "Loafers", "url": "#", "children": [] }
-						]},
-						{ "label": "Accessories", "url": "#", "children": [] }
-					]
-				},
-				{
-					"label": "Women", "url": "#",
-					"children": [
-						{ "label": "Clothing", "url": "#", "children": [] },
-						{ "label": "Shoes", "url": "#", "children": [] }
-					]
-				},
-				{ "label": "Kids", "url": "#", "children": [] },
-				{ "label": "Polo", "url": "#", "children": [] },
-				{ "label": "Collections", "url": "#", "children": [] }
-			]
-		},
+		"menuId": { "type": "number", "default": 0 },
 		"bgColor": { "type": "string", "default": "#ffffff" },
 		"textColor": { "type": "string", "default": "#000000" },
 		"showSearch": { "type": "boolean", "default": true },
@@ -57,5 +28,6 @@
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"viewScript": "file:./view.js"
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php"
 }

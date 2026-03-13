@@ -24,7 +24,6 @@ $wrapper_attributes = get_block_wrapper_attributes( array(
                     <?php woocommerce_catalog_ordering(); ?>
                 </div>
             </div>
-
             <div class="sm-main-grid">
                 <?php
                 while ( have_posts() ) :
@@ -44,10 +43,10 @@ $wrapper_attributes = get_block_wrapper_attributes( array(
                     $name       = $product->get_name();
                     $on_sale    = $product->is_on_sale();
                     ?>
-                    <a class="sm-grid-item sm-item-card" href="<?php echo esc_url( $permalink ); ?>">
+                    <a class="sm-item-card" href="<?php echo esc_url( $permalink ); ?>">
                         <div class="sm-item-img">
                             <?php if ( $on_sale ) : ?>
-                                <span class="sm-item-badge">Sale</span>
+                                <span class="sm-item-badge"><?php esc_html_e( 'Sale', 'my-blocks' ); ?></span>
                             <?php endif; ?>
                             <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $name ); ?>" loading="lazy" />
                         </div>

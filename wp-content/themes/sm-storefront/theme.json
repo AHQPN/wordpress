@@ -49,5 +49,29 @@
 			"background": "var(--wp--preset--color--background)",
 			"text": "var(--wp--preset--color--text)"
 		}
-	}
+	},
+	"customTemplates": [
+		{
+			"name": "taxonomy-product_cat",
+			"title": "Products by Category",
+			"postTypes": [ "page" ]
+		},
+		{
+			"name": "archive-product",
+			"title": "Product Archive (Shop)",
+			"postTypes": [ "page" ]
+		}
+	],
+	"templateParts": [
+		{
+			"name": "header",
+			"title": "Header",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"title": "Footer",
+			"area": "footer"
+		}
+	]
 }

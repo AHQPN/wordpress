@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sm/category-banner",
+  "version": "0.1.0",
+  "title": "SM Category Banner",
+  "category": "sm-blocks",
+  "icon": "cover-image",
+  "description": "Hiển thị banner toàn chiều rộng cho danh mục sản phẩm (tự động lấy ảnh và tên danh mục).",
+  "attributes": {
+    "height": {
+      "type": "string",
+      "default": "400px"
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 0.3
+    },
+    "defaultImage": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "full"
+    ]
+  },
+  "textdomain": "my-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

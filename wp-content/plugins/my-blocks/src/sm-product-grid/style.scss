@@ -4,9 +4,7 @@
     font-family: inherit;
 
     .sm-grid-inner {
-        max-width: 1750px;
-        margin: 0 auto;
-        padding: 0 20px;
+        width: 100%;
     }
 
     .sm-grid-header {
@@ -14,8 +12,8 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 30px;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 15px;
+        border-bottom: 1px solid #eaeaea;
+        padding-bottom: 20px;
 
         .sm-results-count {
             font-size: 14px;
@@ -25,16 +23,32 @@
         }
 
         .sm-ordering {
+            position: relative;
+
             select {
-                border: none;
-                background: none;
+                appearance: none;
+                -webkit-appearance: none;
+                border: 1px solid #e5e5e5;
+                background: #fff;
                 font-family: inherit;
-                font-size: 14px;
+                font-size: 13px;
                 font-weight: 700;
                 text-transform: uppercase;
                 cursor: pointer;
                 outline: none;
-                padding-right: 20px;
+                padding: 10px 40px 10px 15px;
+                border-radius: 2px;
+                letter-spacing: 0.5px;
+                min-width: 200px;
+                transition: all 0.2s ease;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 5 5-5' fill='none' stroke='%23000' stroke-width='1.5'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 15px center;
+                background-size: 10px 6px;
+
+                &:hover, &:focus {
+                    border-color: #000;
+                }
             }
         }
     }

@@ -1,0 +1,625 @@
+/* ===========================================
+   SM My Account Page Styles
+   =========================================== */
+
+:root {
+    --sm-account-max-width: 1750px;
+    --sm-account-side-gap: 40px;
+}
+
+/* Main wrapper aligned with shared site container */
+.sm-account-main-wrapper {
+    max-width: var(--sm-account-max-width) !important;
+    margin: 0 auto !important;
+    padding: 0 var(--sm-account-side-gap) !important;
+    width: 100% !important;
+}
+
+.sm-account-main-wrapper.wp-block-group {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-block-start: 0 !important;
+}
+
+/* Reset FSE nested constraints globally on My Account page */
+body.woocommerce-account main.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
+body.woocommerce-account .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+body.woocommerce-account main.wp-block-group {
+    max-width: var(--sm-account-max-width) !important;
+    margin: 0 auto !important;
+    padding-left: var(--sm-account-side-gap) !important;
+    padding-right: var(--sm-account-side-gap) !important;
+    padding-top: 0 !important; /* Override 80px inline block padding */
+    width: 100% !important;
+}
+
+.woocommerce-account .wp-block-group,
+.woocommerce-account .entry-content,
+.woocommerce-account .wp-block-post-content,
+.woocommerce-account .wp-block-shortcode,
+.woocommerce-account .woocommerce {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Ensure My Account layout follows 2-column grid and matches header exactly */
+.sm-account-layout {
+    display: grid !important;
+    grid-template-columns: minmax(250px, 300px) minmax(0, 1fr) !important;
+    gap: clamp(28px, 3vw, 56px) !important;
+    align-items: start !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Hide default My Account page title from theme/Woo wrappers */
+.woocommerce-account .entry-title,
+.woocommerce-account .wp-block-post-title,
+.woocommerce-account .woocommerce-products-header__title {
+    display: none !important;
+}
+
+/* Content Area */
+.sm-account-layout__content {
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden;
+}
+
+.sm-account-dashboard {
+    max-width: 1120px;
+}
+
+/* --- Sidebar Navigation --- */
+.sm-account-nav {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    padding: 24px;
+    position: sticky;
+    top: 86px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.sm-account-nav__header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.sm-account-nav__avatar img {
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.sm-account-nav__user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.sm-account-nav__user-name {
+    font-weight: 700;
+    font-size: 16px;
+    color: #111;
+}
+
+.sm-account-nav__user-email {
+    font-size: 13px;
+    color: #888;
+}
+
+.sm-account-nav__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sm-account-nav__item a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.sm-account-nav__item a:hover {
+    background: #f8f8f8;
+    color: #000;
+}
+
+.sm-account-nav__item.is-active a {
+    background: #111;
+    color: #fff;
+}
+
+.sm-account-nav__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+}
+
+/* --- Content Area --- */
+.woocommerce-MyAccount-content {
+    width: 100%;
+}
+
+/* --- Dashboard --- */
+.sm-account-dashboard__welcome {
+    margin-bottom: 34px;
+}
+
+.sm-account-dashboard__title {
+    font-size: clamp(28px, 2.1vw, 38px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.sm-account-dashboard__text {
+    color: #666;
+    font-size: 17px;
+    line-height: 1.65;
+    max-width: 68ch;
+}
+
+.sm-account-dashboard__text a {
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.sm-account-dashboard__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.sm-dashboard-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    padding: 26px 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    min-height: 220px;
+}
+
+.sm-dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border-color: #111;
+}
+
+.sm-dashboard-card__icon {
+    width: 48px;
+    height: 48px;
+    background: #f8f8f8;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #111;
+    transition: all 0.2s;
+}
+
+.sm-dashboard-card:hover .sm-dashboard-card__icon {
+    background: #111;
+    color: #fff;
+}
+
+.sm-dashboard-card__title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 10px;
+}
+
+.sm-dashboard-card__desc {
+    font-size: 15px;
+    color: #888;
+    margin: 0;
+    line-height: 1.55;
+}
+
+/* --- Global Forms & Tables in My Account --- */
+/* Form Labels and Inputs */
+.woocommerce-MyAccount-content form {
+    max-width: 800px;
+}
+
+.woocommerce-MyAccount-content legend {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #111;
+}
+
+.woocommerce-form-row {
+    margin-bottom: 24px !important;
+}
+
+.woocommerce-form-row label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.woocommerce-Input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.2s;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.woocommerce-Input:focus {
+    border-color: #111;
+    outline: none;
+    box-shadow: 0 0 0 1px #111;
+}
+
+/* Account Details Fieldset Grouping */
+.woocommerce-EditAccountForm fieldset {
+    border: 1px solid #f0f0f0;
+    padding: 32px;
+    border-radius: 12px;
+    margin-top: 40px;
+    background: #fcfcfc;
+}
+
+/* Specific Sub-pages Styles */
+
+/* 1. Orders Page */
+.woocommerce-MyAccount-orders {
+    width: 100%;
+}
+
+.woocommerce-MyAccount-content table.my_account_orders {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    overflow: hidden;
+    table-layout: auto; /* Let content dictate width initially */
+}
+
+.woocommerce-MyAccount-content table.my_account_orders th {
+    background: #f8f8f8;
+    padding: 16px 24px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.woocommerce-MyAccount-content table.my_account_orders td {
+    padding: 24px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+    color: #111;
+    vertical-align: middle;
+}
+
+.woocommerce-MyAccount-content table.my_account_orders tr:last-child td {
+    border-bottom: none;
+}
+
+/* Order Status Badges */
+.woocommerce-MyAccount-content table .order-status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #f0f0f0;
+    color: #555;
+}
+.woocommerce-MyAccount-content table .order-status.status-completed { background: #e8f5e9; color: #2e7d32; }
+.woocommerce-MyAccount-content table .order-status.status-processing { background: #e3f2fd; color: #1565c0; }
+.woocommerce-MyAccount-content table .order-status.status-on-hold { background: #fff8e1; color: #f57f17; }
+.woocommerce-MyAccount-content table .order-status.status-cancelled,
+.woocommerce-MyAccount-content table .order-status.status-failed { background: #ffebee; color: #c62828; }
+
+/* 2. Addresses Page */
+.u-columns.woocommerce-Addresses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin: 0;
+    width: 100%;
+}
+
+.u-column.woocommerce-Address {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.woocommerce-Address-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.woocommerce-Address-title h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: #111;
+}
+
+.woocommerce-Address-title .edit {
+    font-size: 14px;
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    background: #f8f8f8;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.woocommerce-Address-title .edit:hover {
+    background: #111;
+    color: #fff;
+}
+
+.woocommerce-Address address {
+    font-style: normal;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+}
+
+/* Generic Buttons (Account Details, Edit Address, Order View) */
+.woocommerce-MyAccount-content .button {
+    background: #111 !important;
+    color: #fff !important;
+    padding: 14px 28px !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    cursor: pointer !important;
+    transition: background 0.2s, transform 0.1s !important;
+    border: none !important;
+    display: inline-block;
+    text-align: center;
+}
+
+.woocommerce-MyAccount-content .button:hover {
+    background: #000 !important;
+}
+
+.woocommerce-MyAccount-content .button:active {
+    transform: scale(0.98) !important;
+}
+
+/* Pagination / Notifications */
+.woocommerce-pagination .page-numbers {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 0;
+}
+
+.woocommerce-pagination .page-numbers li a,
+.woocommerce-pagination .page-numbers li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #f8f8f8;
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.woocommerce-pagination .page-numbers li span.current {
+    background: #111;
+    color: #fff;
+}
+
+.woocommerce-message, .woocommerce-error, .woocommerce-info {
+    border-radius: 8px;
+    padding: 16px 24px;
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 32px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.woocommerce-message { border-left: 4px solid #2e7d32; }
+.woocommerce-error { border-left: 4px solid #c62828; }
+.woocommerce-info { border-left: 4px solid #1565c0; }
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    :root {
+        --sm-account-side-gap: 24px;
+    }
+
+    .sm-account-layout {
+        gap: 40px !important;
+    }
+
+    .sm-account-dashboard__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .sm-account-layout {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+        max-width: 100% !important;
+        overflow-x: hidden;
+    }
+
+    .sm-account-layout__sidebar {
+        width: 100% !important;
+        min-width: 0 !important; /* Critical to prevent flexbox auto-width horizontal overflow bug */
+    }
+    
+    .sm-account-nav {
+        position: static;
+        padding: 12px;
+        width: 100% !important;
+        overflow: hidden; /* Critical to keep scroll inside the nav */
+    }
+
+    .sm-account-nav__header {
+        display: none !important; /* Hide large avatar on mobile to save space */
+    }
+
+    .sm-account-nav__menu {
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 8px !important; /* Room for scrollbar */
+        gap: 12px !important;
+        scrollbar-width: thin; /* Show thin scrollbar to indicate scrollability */
+        scrollbar-color: #ddd transparent;
+    }
+    
+    .sm-account-nav__menu::-webkit-scrollbar {
+        height: 4px;
+        display: block; /* Show scrollbar so users know it scrolls */
+    }
+    .sm-account-nav__menu::-webkit-scrollbar-thumb {
+        background: #ddd;
+        border-radius: 4px;
+    }
+
+    .sm-account-nav__item {
+        flex: 0 0 auto !important; /* Prevent shrinking */
+    }
+    
+    .sm-account-nav__item a {
+        padding: 10px 18px !important;
+        white-space: nowrap !important; /* Keep text on one line */
+        background: #f8f8f8;
+        border-radius: 8px;
+    }
+    
+    .sm-account-nav__item.is-active a {
+        background: #111;
+        color: #fff;
+    }
+
+    .sm-dashboard-card {
+        min-height: 0;
+        padding: 24px;
+    }
+
+    .sm-account-dashboard__text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --sm-account-side-gap: 16px;
+    }
+
+    .sm-account-main-wrapper {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .sm-account-nav {
+        padding: 12px 16px;
+        border-radius: 12px;
+    }
+
+    .sm-account-nav__header {
+        display: none !important;
+    }
+
+    .sm-account-nav__item a {
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+    }
+
+    .sm-account-dashboard__cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .sm-dashboard-card {
+        min-height: 0;
+        padding: 20px;
+    }
+
+    .sm-account-dashboard__title {
+        font-size: 30px;
+    }
+
+    .sm-account-dashboard__text {
+        font-size: 15px;
+    }
+
+    .woocommerce-MyAccount-content table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        table-layout: auto;
+    }
+
+    .woocommerce-MyAccount-content th,
+    .woocommerce-MyAccount-content td {
+        white-space: nowrap;
+    }
+
+    .woocommerce-MyAccount-content td {
+        padding: 14px;
+        font-size: 13px;
+    }
+}

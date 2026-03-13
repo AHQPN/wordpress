@@ -1,1 +1,33 @@
-.sm-product-breadcrumb-container{box-sizing:border-box;margin:0;padding:0 20px;width:100%}.sm-product-breadcrumb-container .woocommerce-breadcrumb{color:#767676;display:block;font-size:13px;font-weight:500;letter-spacing:.8px;line-height:1.4;margin:0;padding:0;text-transform:uppercase}.sm-product-breadcrumb-container .woocommerce-breadcrumb a{color:#1a1a1a;text-decoration:none;transition:color .3s ease}.sm-product-breadcrumb-container .woocommerce-breadcrumb a:hover{color:#000;text-decoration:underline}
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/sm-product-breadcrumb/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.sm-product-breadcrumb-container {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.sm-product-breadcrumb-container .woocommerce-breadcrumb {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: #767676;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+  display: block;
+}
+.sm-product-breadcrumb-container .woocommerce-breadcrumb a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.sm-product-breadcrumb-container .woocommerce-breadcrumb a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

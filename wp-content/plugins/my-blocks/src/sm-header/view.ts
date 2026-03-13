@@ -1,7 +1,9 @@
 /**
- * SM Header – Mega Menu + Mobile Drawer interactions
+ * SM Header – Mega Menu + Mobile Drawer + Live Search
  * Ported from Shopify sm-header.js
  */
+declare const smHeaderSearch: { ajaxUrl: string; nonce: string } | undefined;
+
 ( function () {
 	'use strict';
 
@@ -11,8 +13,152 @@
 	const megaPanels = document.querySelectorAll( '.sm-mega' );
 	const hamburger = document.getElementById( 'sm-hamburger' );
 	const mobileDrawer = document.getElementById( 'sm-mobile-drawer' );
+	const searchBar = document.getElementById( 'sm-search-bar' );
+	const searchTriggers = document.querySelectorAll( '.sm-header__search-trigger' );
+	const searchClose = document.getElementById( 'sm-search-close' );
+	const searchInput = document.getElementById( 'sm-header-search-input' ) as HTMLInputElement;
+
+	// Live search elements
+	const searchResultsContainer = document.getElementById( 'sm-search-results' );
+	const searchResultsList = document.getElementById( 'sm-search-results-list' );
+	const searchLoading = document.getElementById( 'sm-search-loading' );
+	const searchEmpty = document.getElementById( 'sm-search-empty' );
+	const searchViewAll = document.getElementById( 'sm-search-view-all' ) as HTMLAnchorElement;
 
 	let activeMega: string | null = null;
+	let searchDebounce: ReturnType< typeof setTimeout > | null = null;
+	let currentAbortController: AbortController | null = null;
+
+	/* ————— Search Functions ———— */
+	function openSearch() {
+		if ( ! searchBar ) return;
+		searchBar.classList.add( 'is-active' );
+		searchBar.setAttribute( 'aria-hidden', 'false' );
+		document.body.classList.add( 'sm-no-scroll' );
+		setTimeout( () => {
+			if ( searchInput ) searchInput.focus();
+		}, 100 );
+	}
+
+	function closeSearch() {
+		if ( ! searchBar ) return;
+		searchBar.classList.remove( 'is-active' );
+		searchBar.setAttribute( 'aria-hidden', 'true' );
+		document.body.classList.remove( 'sm-no-scroll' );
+		clearSearchResults();
+	}
+
+	function clearSearchResults() {
+		if ( searchResultsList ) searchResultsList.innerHTML = '';
+		if ( searchLoading ) searchLoading.style.display = 'none';
+		if ( searchEmpty ) searchEmpty.style.display = 'none';
+		if ( searchViewAll ) searchViewAll.style.display = 'none';
+		if ( searchResultsContainer ) searchResultsContainer.classList.remove( 'has-results' );
+	}
+
+	function showLoading() {
+		if ( searchLoading ) searchLoading.style.display = 'flex';
+		if ( searchEmpty ) searchEmpty.style.display = 'none';
+		if ( searchViewAll ) searchViewAll.style.display = 'none';
+		if ( searchResultsList ) searchResultsList.innerHTML = '';
+	}
+
+	function renderResults( data: {
+		products: Array< {
+			id: number;
+			name: string;
+			permalink: string;
+			thumbnail: string;
+			price: string;
+		} >;
+		keyword: string;
+		search_url: string;
+	} ) {
+		if ( searchLoading ) searchLoading.style.display = 'none';
+
+		if ( ! data.products || data.products.length === 0 ) {
+			if ( searchEmpty ) searchEmpty.style.display = 'flex';
+			if ( searchResultsContainer ) searchResultsContainer.classList.remove( 'has-results' );
+			return;
+		}
+
+		if ( searchResultsContainer ) searchResultsContainer.classList.add( 'has-results' );
+
+		const html = data.products
+			.map(
+				( product ) => `
+			<a href="${ product.permalink }" class="sm-search-results__item">
+				<div class="sm-search-results__thumb">
+					<img src="${ product.thumbnail }" alt="${ product.name }" loading="lazy" />
+				</div>
+				<div class="sm-search-results__info">
+					<span class="sm-search-results__name">${ product.name }</span>
+					<span class="sm-search-results__price">${ product.price }</span>
+				</div>
+			</a>
+		`
+			)
+			.join( '' );
+
+		if ( searchResultsList ) searchResultsList.innerHTML = html;
+
+		// Show "View All" link
+		if ( searchViewAll ) {
+			searchViewAll.href = data.search_url;
+			searchViewAll.style.display = 'flex';
+		}
+	}
+
+	function performSearch( keyword: string ) {
+		if ( typeof smHeaderSearch === 'undefined' ) return;
+		if ( keyword.length < 2 ) {
+			clearSearchResults();
+			return;
+		}
+
+		// Abort previous request
+		if ( currentAbortController ) {
+			currentAbortController.abort();
+		}
+		currentAbortController = new AbortController();
+
+		showLoading();
+
+		const url = new URL( smHeaderSearch.ajaxUrl );
+		url.searchParams.set( 'action', 'sm_header_search' );
+		url.searchParams.set( 'nonce', smHeaderSearch.nonce );
+		url.searchParams.set( 'keyword', keyword );
+
+		fetch( url.toString(), { signal: currentAbortController.signal } )
+			.then( ( res ) => res.json() )
+			.then( ( response ) => {
+				if ( response.success ) {
+					renderResults( response.data );
+				}
+			} )
+			.catch( ( err ) => {
+				if ( err.name !== 'AbortError' ) {
+					if ( searchLoading ) searchLoading.style.display = 'none';
+				}
+			} );
+	}
+
+	// Debounced input handler
+	if ( searchInput ) {
+		searchInput.addEventListener( 'input', function () {
+			const value = this.value.trim();
+			if ( searchDebounce ) clearTimeout( searchDebounce );
+
+			if ( value.length < 2 ) {
+				clearSearchResults();
+				return;
+			}
+
+			searchDebounce = setTimeout( () => {
+				performSearch( value );
+			}, 300 );
+		} );
+	}
 
 	/* ——————————————————————————————
 	   MEGA MENU (desktop)
@@ -169,6 +315,20 @@
 		if ( e.key === 'Escape' ) {
 			closeMega();
 			closeDrawer();
+			closeSearch();
 		}
 	} );
+
+	// Search triggers
+	searchTriggers.forEach( ( trigger ) => {
+		trigger.addEventListener( 'click', ( e ) => {
+			e.preventDefault();
+			openSearch();
+		} );
+	} );
+
+	if ( searchClose ) {
+		searchClose.addEventListener( 'click', closeSearch );
+	}
 } )();
+

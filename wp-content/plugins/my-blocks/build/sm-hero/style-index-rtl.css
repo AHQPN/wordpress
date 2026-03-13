@@ -1,1 +1,78 @@
-.sm-hero-section{height:800px;margin:0;min-height:500px;overflow:hidden;position:relative}.sm-hero-overlay,.sm-hero-section{align-items:center;display:flex;justify-content:center}.sm-hero-overlay{inset:0;position:absolute;z-index:1}.sm-hero-video-bg{height:auto;right:50%;min-height:100%;min-width:100%;-o-object-fit:cover;object-fit:cover;position:absolute;top:50%;transform:translate(50%,-50%);width:auto;z-index:0}.sm-hero-content{color:#fff;max-width:800px;padding:40px 20px;text-align:center}.sm-hero-title{color:#fff;font-size:3rem;font-weight:700;line-height:1.2;margin-bottom:16px}.sm-hero-subtitle{color:#fff;font-size:1.25rem;margin-bottom:32px;opacity:.9}a.sm-hero-button,span.sm-hero-button{background:#fff;border-radius:50px;color:#333;cursor:pointer;display:inline-block;font-size:1rem;font-weight:600;padding:14px 36px;text-decoration:none;transition:all .3s ease}a.sm-hero-button:hover,span.sm-hero-button:hover{box-shadow:0 8px 25px rgba(0,0,0,.2);transform:translateY(-2px)}
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/sm-hero/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
+.sm-hero-section {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  height: 800px;
+}
+
+.sm-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.sm-hero-video-bg {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(50%, -50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 0;
+}
+
+.sm-hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.sm-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.sm-hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 32px;
+  opacity: 0.9;
+  color: #fff;
+}
+
+a.sm-hero-button,
+span.sm-hero-button {
+  display: inline-block;
+  background: #fff;
+  color: #333;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+a.sm-hero-button:hover,
+span.sm-hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
